@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/392bdf4d-9e90-4e91-accd-b36a6f7a7c49/deploy-status)](https://app.netlify.com/projects/strawberry-swirl/deploys)
+
 # 🍓 Strawberry Swirl Squad
 
 A React + Vite project.
