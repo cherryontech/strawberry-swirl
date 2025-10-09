@@ -9,7 +9,7 @@ A React + Vite project.
 ### 📦 Prerequisites
 
 - **Node.js** v20.19+ or v22.12+
-- **npm** (comes with Node)
+- **npm**
 
 ### 🧰 Setup
 
@@ -34,11 +34,12 @@ A React + Vite project.
 
 ## 📜 Available Scripts
 
-- `npm run dev` - Start the development server.
-- `npm run build` - Build the app for production.
-- `npm run preview` - Preview the production build.
-- `npm run lint` - Check code for style and errors.
+- `npm run dev` - Start the local development server
+- `npm run build` - Create an optimized production build
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Check code style and errors using ESLint
+- `npm run format` - Format code with Prettier
 
 ## 🤝 Contributing
 
-To get involved, read [CONTRIBUTING.md](CONTRIBUTING.md).
+Check out our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get started.
