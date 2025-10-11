@@ -15,22 +15,22 @@ A React + Vite project.
 
 1. **Clone the repository**
 
-    ```
-    git clone https://github.com/cherryontech/strawberry-swirl.git
-    cd strawberry-swirl
-    ```
+   ```
+   git clone https://github.com/cherryontech/strawberry-swirl.git
+   cd strawberry-swirl
+   ```
 
 2. **Install dependencies**
 
-    ```
-    npm install
-    ```
+   ```
+   npm install
+   ```
 
 3. **Start the development server**
 
-    ```
-    npm run dev
-    ```
+   ```
+   npm run dev
+   ```
 
 ## 📜 Available Scripts
 

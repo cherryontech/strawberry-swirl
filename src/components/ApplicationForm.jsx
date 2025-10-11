@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const ApplicationForm = () => {
   const [applications, setApplications] = useState([]);
@@ -13,7 +14,7 @@ const ApplicationForm = () => {
   }, []);
 
   const handleAddClick = () => {
-    const updatedApps = [...applications, { companyName, role }];
+    const updatedApps = [...applications, { id: uuidv4(), companyName, role }];
     setApplications(updatedApps);
 
     localStorage.setItem("applications", JSON.stringify(updatedApps));
@@ -42,7 +43,7 @@ const ApplicationForm = () => {
           className="p-2 border-2 rounded-md bg-white"
         />
         <button
-          className="px-4 py-2 bg-rose-500 text-white rounded-md hover:bg-rose-600 transition"
+          className="px-4 py-2 bg-rose-500 text-white rounded-md hover:bg-rose-600 transition cursor-pointer"
           onClick={handleAddClick}
         >
           Add
@@ -56,9 +57,9 @@ const ApplicationForm = () => {
         </h2>
 
         <ul>
-          {applications.map((app, index) => (
+          {applications.map((app) => (
             <li
-              key={index}
+              key={app.id}
             >{`Company Name: ${app.companyName} | Role: ${app.role}`}</li>
           ))}
         </ul>
