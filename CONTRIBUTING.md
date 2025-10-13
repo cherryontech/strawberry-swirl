@@ -12,9 +12,9 @@ Please take a moment to read this guide before making contributions. For install
 ## 🔄 Pull Request Process
 
 1. Make sure your branch:
-    - Passes lint checks (`npm run lint`)
-    - Is formatted with Prettier (`npm run format`)
-    - Builds successfully with no errors (`npm run build`)
+   - Passes lint checks (`npm run lint`)
+   - Is formatted with Prettier (`npm run format`)
+   - Builds successfully with no errors (`npm run build`)
 2. Update documentation (e.g. `README.md`) if your changes affect affect setup, usage, or behavior.
 3. At least **2 developers** must review and approve your PR before merging..
 4. Once approved, you may merge your PR into `main`.
