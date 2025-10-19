@@ -27,7 +27,6 @@ export default function MotivationalQuotes() {
 
         const result = await res.json();
         const data = JSON.parse(result.contents);
-        console.log("Fetched quotes via proxy:", data);
         setQuotes(data.length ? data : fallbackQuotes);
       } catch (err) {
         console.error("Failed to fetch quotes, using fallback", err);
