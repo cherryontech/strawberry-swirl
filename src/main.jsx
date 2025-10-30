@@ -1,24 +1,33 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.jsx";
-import Resources from "./Resources.jsx";
-import Navbar from "./components/Navbar.jsx";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const Layout = () => (
-  <>
-    <Navbar />
-    <Outlet />
-  </>
-);
+import "./index.css";
+
+import App from "./App.jsx";
+import Home from "./pages/Home.jsx";
+import Onboarding from "./pages/Onboarding.jsx";
+import Start from "./pages/Start.jsx";
+import Resources from "./pages/Resources.jsx";
+
+import OnboardingGuard from "./guards/OnboardingGuard.jsx";
 
 const router = createBrowserRouter([
   {
-    element: <Layout />,
+    path: "/",
+    element: <App />,
     children: [
-      { path: "/", element: <App /> },
-      { path: "/resources", element: <Resources /> },
+      { index: true, element: <Home /> },
+      {
+        path: "onboarding",
+        element: (
+          <OnboardingGuard>
+            <Onboarding />
+          </OnboardingGuard>
+        ),
+      },
+      { path: "start", element: <Start /> },
+      { path: "resources", element: <Resources /> },
     ],
   },
 ]);
