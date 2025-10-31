@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import Resources from "./Resources.jsx";
 import Navbar from "./components/Navbar.jsx";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import JobTracking from "./JobTracking.jsx";
 
 const Layout = () => (
   <>
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <App /> },
       { path: "/resources", element: <Resources /> },
+      { path: "/jobtracking", element: <JobTracking /> },
     ],
   },
 ]);

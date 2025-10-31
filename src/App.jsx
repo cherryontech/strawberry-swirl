@@ -1,11 +1,13 @@
-import ApplicationForm from "./components/ApplicationForm";
-import MotivationalQuotes from "./components/MotivationalQuotes";
+//import ApplicationForm from "./components/ApplicationForm";
+import Home from "./components/Home";
+//import MotivationalQuotes from "./components/MotivationalQuotes";
 
 function App() {
   return (
     <div>
-      <MotivationalQuotes />
-      <ApplicationForm />
+      {/*  <MotivationalQuotes /> */}
+      <Home />
+      {/*<ApplicationForm />*/}
     </div>
   );
 }
