@@ -11,24 +11,29 @@ import Start from "./pages/Start.jsx";
 import Resources from "./pages/Resources.jsx";
 
 import OnboardingGuard from "./guards/OnboardingGuard.jsx";
+import AuthGuard from "./guards/AuthGuard.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <AuthGuard>
+        <App />
+      </AuthGuard>
+    ),
     children: [
       { index: true, element: <Home /> },
-      {
-        path: "onboarding",
-        element: (
-          <OnboardingGuard>
-            <Onboarding />
-          </OnboardingGuard>
-        ),
-      },
       { path: "start", element: <Start /> },
       { path: "resources", element: <Resources /> },
     ],
+  },
+  {
+    path: "/onboarding",
+    element: (
+      <OnboardingGuard>
+        <Onboarding />
+      </OnboardingGuard>
+    ),
   },
 ]);
 
