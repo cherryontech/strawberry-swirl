@@ -1,13 +1,11 @@
-import ApplicationForm from "./components/ApplicationForm";
-import MotivationalQuotes from "./components/MotivationalQuotes";
+import { Outlet } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <MotivationalQuotes />
-      <ApplicationForm />
+      <Outlet />
     </div>
   );
-}
+};
 
 export default App;
