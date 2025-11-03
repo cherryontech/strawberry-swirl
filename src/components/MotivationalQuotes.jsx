@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ALL_ORIGINS_BASE_URL, QUOTES_API_URL } from "../utils/apiConfig";
 
 const fallbackQuotes = [
   { q: "Believe you can and you're halfway there.", a: "Theodore Roosevelt" },
@@ -21,8 +22,7 @@ export default function MotivationalQuotes() {
     const fetchQuotes = async () => {
       try {
         const res = await fetch(
-          "https://api.allorigins.win/get?url=" +
-            encodeURIComponent("https://zenquotes.io/api/quotes"),
+          ALL_ORIGINS_BASE_URL + encodeURIComponent(QUOTES_API_URL),
         );
 
         const result = await res.json();
@@ -53,16 +53,19 @@ export default function MotivationalQuotes() {
   const { q, a } = quotes[currentIndex];
 
   return (
-    <div className="flex flex-col justify-center items-center bg-rose-50 ">
+    <div className="flex flex-col justify-start items-left rounded-2xl min-h-screen bg-linear-to-r from-gray-50 to-white shadow-md hover:border-2 hover:border-solid hover:border-blue-500">
+      <h1 className="text-xl md:text-2xl text-left font-lora m-4 mt-5 hover:underline hover:decoration-blue-500">
+        {" "}
+        Motivation Buddy
+      </h1>
+
       <div
         className={`transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0 "}`}
       >
-        <p className="text-xl md:text-2xl text-center font-bold text-rose-500 m-4 mt-50">
+        <p className="text-xl md:text-2xl text-center m-4 mt-5 font-lora">
           {q}
         </p>
-        <p className="text-lg md:text-xl text-center font-bold text-rose-500  mb-4">
-          - {a}
-        </p>
+        <p className="text-lg md:text-xl text-center mb-4 font-lora">- {a}</p>
       </div>
     </div>
   );

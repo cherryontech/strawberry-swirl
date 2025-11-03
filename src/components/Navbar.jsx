@@ -13,6 +13,11 @@ const Navbar = () => {
           Resources
         </button>
       </NavLink>
+      <NavLink to={"/jobtracking"}>
+        <button className="px-4 py-2 bg-rose-500 text-white rounded-md hover:bg-rose-600 transition cursor-pointer">
+          Job Tracking
+        </button>
+      </NavLink>
     </div>
   );
 };
