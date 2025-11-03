@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
 
@@ -11,7 +10,6 @@ import Onboarding from "./pages/Onboarding.jsx";
 import Start from "./pages/Start.jsx";
 import Resources from "./pages/Resources.jsx";
 import JobTracking from "./pages/JobTracking.jsx";
-import JobTracking from "./pages/JobTracking.jsx";
 
 import OnboardingGuard from "./guards/OnboardingGuard.jsx";
 import AuthGuard from "./guards/AuthGuard.jsx";
@@ -19,8 +17,7 @@ import AuthGuard from "./guards/AuthGuard.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-<AuthGuard protectedContent={<App />} />    ),
+    element: <AuthGuard protectedContent={<App />} />,
     children: [
       { index: true, element: <Home /> },
       { path: "start", element: <Start /> },
@@ -43,4 +40,3 @@ createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </StrictMode>,
 );
-
