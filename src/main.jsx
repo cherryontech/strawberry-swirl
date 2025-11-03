@@ -1,6 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
 
@@ -25,6 +24,8 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "start", element: <Start /> },
       { path: "resources", element: <Resources /> },
+      { path: "/", element: <App /> },
+      { path: "/jobtracking", element: <JobTracking /> },
     ],
   },
   {
@@ -42,3 +43,5 @@ createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </StrictMode>,
 );
+
+export default Layout;
