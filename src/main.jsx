@@ -10,36 +10,31 @@ import Start from "./pages/Start.jsx";
 import Resources from "./pages/Resources.jsx";
 
 import OnboardingGuard from "./guards/OnboardingGuard.jsx";
-import Navbar from "./components/Navbar.jsx";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import JobTracking from "./pages/JobTracking.jsx";
-
-const Layout = () => (
-  <>
-    <Navbar />
-    <Outlet />
-  </>
-);
+import AuthGuard from "./guards/AuthGuard.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <AuthGuard>
+        <App />
+      </AuthGuard>
+    ),
     children: [
       { index: true, element: <Home /> },
-      {
-        path: "onboarding",
-        element: (
-          <OnboardingGuard>
-            <Onboarding />
-          </OnboardingGuard>
-        ),
-      },
       { path: "start", element: <Start /> },
       { path: "resources", element: <Resources /> },
       { path: "/", element: <App /> },
       { path: "/jobtracking", element: <JobTracking /> },
     ],
+  },
+  {
+    path: "/onboarding",
+    element: (
+      <OnboardingGuard>
+        <Onboarding />
+      </OnboardingGuard>
+    ),
   },
 ]);
 
