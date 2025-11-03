@@ -32,14 +32,14 @@ const ApplicationForm = () => {
   };
 
   return (
-    <div className="flex flex-col justify-start items-center min-h-screen rounded-2xl bg-amber-50">
+    <div className=" overflow-x-auto flex flex-col justify-start items-start min-h-screen w-full rounded-2xl bg-linear-to-r from-gray-50 to-white shadow-md hover:border-2 hover:border-solid hover:border-blue-500">
       {/* Application Form */}
       <div>
-        <h2 className="text-2xl font-bold m-4 text-center ">
+        <h2 className="ml-8 mt-5 text-2xl font-lora hover:underline hover:decoration-blue-500 ">
           Add your job application details here.
         </h2>
       </div>
-      <div className="bg-rose-100 flex xl:flex-row flex-col justify-around gap-2 p-6 rounded-xl w-11/12 shadow-md mb-8">
+      <div className="flex xl:flex-row flex-col justify-around gap-2 p-6 rounded-xl w-11/12 ml-8 mt-1 bg-linear-to-r from-gray-50 to-white shadow-md hover:border-2 hover:border-solid hover:border-blue-500 font-lora">
         <input
           type="text"
           placeholder="Company Name"
@@ -77,7 +77,7 @@ const ApplicationForm = () => {
           className="p-2 border-2 rounded-md bg-white w-full"
         />
         <button
-          className="px-4 py-2 bg-rose-500 text-white rounded-md hover:bg-rose-600 transition cursor-pointer"
+          className="px-3 py-1 bg-linear-to-r from-gray-50 to-white shadow-md hover:border-2 hover:border-solid hover:border-blue-500 rounded-3xl"
           onClick={handleAddClick}
         >
           Add
@@ -85,32 +85,62 @@ const ApplicationForm = () => {
       </div>
 
       {/* Application List */}
-      <h2 className="text-2xl font-bold mb-2 text-center ">
+      <h2 className="ml-8 mt-5 text-2xl font-lora hover:underline hover:decoration-blue-500 ">
         Recent Applications
       </h2>
-      <div className="w-11/12  bg-rose-100 rounded-xl shadow-md p-4 overflow-x-auto text-sm">
+      <div className="w-11/12  bg-rose-100 rounded-xl shadow-md p-4 overflow-x-auto text-sm ml-8 mt-1 bg-linear-to-r from-gray-50 to-white hover:border-2 hover:border-solid hover:border-blue-500 font-lora">
         {applications.length > 0 && (
-          <table className="mt-6 border-collapse border min-w-full text-left">
+          <table className="m-4 border-collapse border-none w-11/12 md:w-11/12 md:text-sm  text-left text-sm">
             <thead>
-              <tr className="bg-gray-100">
-                <th className="border px-4 py-2">Company Name</th>
-                <th className="border px-4 py-2">Role</th>
-                <th className="border px-4 py-2">Status</th>
-                <th className="border px-4 py-2">Date</th>
+              <tr className="hover:border-blue-500 hover:border-2 border-b border-gray-200">
+                <th className="border-0 font-normal px-4 py-2">company</th>
+                <th className="border-0 font-normal px-4 py-2">job title</th>
+                <th className="border-0 font-normal px-4 py-2">status</th>
+                <th className="border-0 font-normal px-4 py-2">date</th>
               </tr>
             </thead>
             <tbody>
               {applications.map((app) => (
-                <tr key={app.id}>
-                  <td className="border px-4 py-2">{app.companyName}</td>
-                  <td className="border px-4 py-2">{app.role}</td>
-                  <td className="border px-4 py-2">{app.status}</td>
-                  <td className="border px-4 py-2">{app.date}</td>
+                <tr
+                  key={app.id}
+                  className="hover:border-blue-500 hover:border-2 border-b border-gray-200"
+                >
+                  <td className="border-0 font-normal px-4 py-2">
+                    {app.companyName}
+                  </td>
+                  <td className="border-0 font-normal px-4 py-2">{app.role}</td>
+                  <td className="border-0 font-normal px-4 py-2">
+                    {app.status}
+                  </td>
+                  <td className="border-0 font-normal px-4 py-2">{app.date}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         )}
+      </div>
+      <h2 className="ml-8 mt-5 text-2xl font-lora hover:underline hover:decoration-blue-500 ">
+        Saved Jobs
+      </h2>
+      <div className="w-11/12  bg-rose-100 rounded-xl shadow-md p-4 overflow-x-auto text-sm ml-8 mt-1 bg-linear-to-r from-gray-50 to-white hover:border-2 hover:border-solid hover:border-blue-500 font-lora">
+        <table className="m-4 border-collapse border-none w-11/12 md:w-11/12 md:text-sm  text-left text-sm">
+          <thead>
+            <tr className="hover:border-blue-500 hover:border-2 border-b border-gray-200">
+              <th className="border-0 font-normal px-4 py-2">company</th>
+              <th className="border-0 font-normal px-4 py-2">job title</th>
+              <th className="border-0 font-normal px-4 py-2">status</th>
+              <th className="border-0 font-normal px-4 py-2">date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="hover:border-blue-500 hover:border-2 border-b border-gray-200">
+              <td className="border-0 font-normal px-4 py-2">company</td>
+              <td className="border-0 font-normal px-4 py-2">job title</td>
+              <td className="border-0 font-normal px-4 py-2">status</td>
+              <td className="border-0 font-normal px-4 py-2">date</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );
