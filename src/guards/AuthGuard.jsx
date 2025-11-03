@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Navigate, useLocation } from "react-router-dom";
 
-const AuthGuard = ({ children }) => {
+const AuthGuard = ({ protectedContent }) => {
   const userName = localStorage.getItem("userName");
   const location = useLocation();
 
@@ -9,11 +9,11 @@ const AuthGuard = ({ children }) => {
     return <Navigate to="/onboarding" replace />;
   }
 
-  return children;
+  return protectedContent;
 };
 
 AuthGuard.propTypes = {
-  children: PropTypes.node.isRequired,
+  protectedContent: PropTypes.node.isRequired,
 };
 
 export default AuthGuard;
