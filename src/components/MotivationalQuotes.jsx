@@ -53,12 +53,7 @@ export default function MotivationalQuotes() {
   const { q, a } = quotes[currentIndex];
 
   return (
-    <div className="flex flex-col justify-start items-left rounded-2xl min-h-screen bg-linear-to-r from-gray-50 to-white shadow-md hover:border-2 hover:border-solid hover:border-blue-500">
-      <h1 className="text-xl md:text-2xl text-left font-lora m-4 mt-5 hover:underline hover:decoration-blue-500">
-        {" "}
-        Motivation Buddy
-      </h1>
-
+    <div className="flex flex-col justify-start items-left rounded-2xl bg-linear-to-r from-gray-50 to-white shadow-md">
       <div
         className={`transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0 "}`}
       >
