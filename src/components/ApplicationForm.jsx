@@ -1,149 +1,113 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import PropTypes from "prop-types";
 
-const ApplicationForm = () => {
-  const [applications, setApplications] = useState([]);
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoIosArrowDropright } from "react-icons/io";
+
+const ApplicationForm = ({ onSave, onClose }) => {
   const [companyName, setCompanyName] = useState("");
   const [role, setRole] = useState("");
   const [status, setStatus] = useState("");
   const [date, setDate] = useState("");
-
-  useEffect(() => {
-    const storedApps = localStorage.getItem("applications");
-    if (storedApps) {
-      setApplications(JSON.parse(storedApps));
-    }
-  }, []);
+  const [notes, setNotes] = useState("");
 
   const handleAddClick = () => {
-    const updatedApps = [
-      ...applications,
-      { id: uuidv4(), companyName, role, status, date },
-    ];
-    setApplications(updatedApps);
+    const newApp = { id: uuidv4(), companyName, role, status, date, notes };
+    onSave(newApp);
 
-    localStorage.setItem("applications", JSON.stringify(updatedApps));
+    // Reset fields
     setCompanyName("");
     setRole("");
     setStatus("");
     setDate("");
-
-    console.log(localStorage.getItem("applications"));
+    setNotes("");
   };
 
   return (
-    <div className=" overflow-x-auto flex flex-col justify-start items-start min-h-screen w-full rounded-2xl bg-linear-to-r from-gray-50 to-white shadow-md hover:border-2 hover:border-solid hover:border-blue-500">
-      {/* Application Form */}
-      <div>
-        <h2 className="ml-8 mt-5 text-2xl font-lora hover:underline hover:decoration-blue-500 ">
-          Add your job application details here.
-        </h2>
-      </div>
-      <div className="flex xl:flex-row flex-col justify-around gap-2 p-6 rounded-xl w-11/12 ml-8 mt-1 bg-linear-to-r from-gray-50 to-white shadow-md hover:border-2 hover:border-solid hover:border-blue-500 font-lora">
-        <input
-          type="text"
-          placeholder="Company Name"
-          value={companyName}
-          onChange={(e) => setCompanyName(e.target.value)}
-          className="p-2 border-2 rounded-md bg-white w-full"
-        />
-        <input
-          type="text"
-          placeholder="Role"
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-          className="p-2 border-2 rounded-md bg-white w-full"
-        />
+    <div className="w-3/4 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
+      <div className="flex flex-col">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="font-lora font-medium text-2xl">
+            Add new application
+          </h2>
 
-        <select
-          name="status"
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
-          className="p-2 border-2 rounded-md bg-white w-full"
-        >
-          <option value="">Select Status</option>
-          <option value="Saved"> Saved</option>
-          <option value="Applied">Applied</option>
-          <option value="Interviewing">Interviewing</option>
-          <option value="Rejected">Rejected</option>
-          <option value="Offers">Offers</option>
-        </select>
+          <button
+            onClick={onClose}
+            className="text-zinc-500 cursor-pointer hover:scale-105  transition-transform duration-200"
+          >
+            <IoIosCloseCircleOutline size={30} />
+          </button>
+        </div>
 
-        <input
-          type="date"
-          name="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          className="p-2 border-2 rounded-md bg-white w-full"
-        />
-        <button
-          className="px-3 py-1 bg-linear-to-r from-gray-50 to-white shadow-md hover:border-2 hover:border-solid hover:border-blue-500 rounded-3xl"
-          onClick={handleAddClick}
-        >
-          Add
-        </button>
-      </div>
+        {/* Application Form */}
+        <div className="flex flex-col items-center">
+          <div className="mx-auto grid grid-cols-2 gap-4 w-3/4">
+            <input
+              type="text"
+              placeholder="Company Name"
+              value={companyName}
+              onChange={(e) => setCompanyName(e.target.value)}
+              className="font-inter px-4 py-2 border-2 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
+            />
 
-      {/* Application List */}
-      <h2 className="ml-8 mt-5 text-2xl font-lora hover:underline hover:decoration-blue-500 ">
-        Recent Applications
-      </h2>
-      <div className="w-11/12  bg-rose-100 rounded-xl shadow-md p-4 overflow-x-auto text-sm ml-8 mt-1 bg-linear-to-r from-gray-50 to-white hover:border-2 hover:border-solid hover:border-blue-500 font-lora">
-        {applications.length > 0 && (
-          <table className="m-4 border-collapse border-none w-11/12 md:w-11/12 md:text-sm  text-left text-sm">
-            <thead>
-              <tr className="hover:border-blue-500 hover:border-2 border-b border-gray-200">
-                <th className="border-0 font-normal px-4 py-2">company</th>
-                <th className="border-0 font-normal px-4 py-2">job title</th>
-                <th className="border-0 font-normal px-4 py-2">status</th>
-                <th className="border-0 font-normal px-4 py-2">date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {applications.map((app) => (
-                <tr
-                  key={app.id}
-                  className="hover:border-blue-500 hover:border-2 border-b border-gray-200"
-                >
-                  <td className="border-0 font-normal px-4 py-2">
-                    {app.companyName}
-                  </td>
-                  <td className="border-0 font-normal px-4 py-2">{app.role}</td>
-                  <td className="border-0 font-normal px-4 py-2">
-                    {app.status}
-                  </td>
-                  <td className="border-0 font-normal px-4 py-2">{app.date}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </div>
-      <h2 className="ml-8 mt-5 text-2xl font-lora hover:underline hover:decoration-blue-500 ">
-        Saved Jobs
-      </h2>
-      <div className="w-11/12  bg-rose-100 rounded-xl shadow-md p-4 overflow-x-auto text-sm ml-8 mt-1 bg-linear-to-r from-gray-50 to-white hover:border-2 hover:border-solid hover:border-blue-500 font-lora">
-        <table className="m-4 border-collapse border-none w-11/12 md:w-11/12 md:text-sm  text-left text-sm">
-          <thead>
-            <tr className="hover:border-blue-500 hover:border-2 border-b border-gray-200">
-              <th className="border-0 font-normal px-4 py-2">company</th>
-              <th className="border-0 font-normal px-4 py-2">job title</th>
-              <th className="border-0 font-normal px-4 py-2">status</th>
-              <th className="border-0 font-normal px-4 py-2">date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="hover:border-blue-500 hover:border-2 border-b border-gray-200">
-              <td className="border-0 font-normal px-4 py-2">company</td>
-              <td className="border-0 font-normal px-4 py-2">job title</td>
-              <td className="border-0 font-normal px-4 py-2">status</td>
-              <td className="border-0 font-normal px-4 py-2">date</td>
-            </tr>
-          </tbody>
-        </table>
+            <input
+              type="text"
+              placeholder="Role"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              className="font-inter px-4 py-2 border-2 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
+            />
+
+            <input
+              type="date"
+              name="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="font-inter px-4 py-2 border-2 text-zinc-500 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
+            />
+
+            <select
+              name="status"
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+              className="font-inter px-4 py-2 border-2  text-zinc-500 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
+            >
+              <option value="">Select Status</option>
+              <option value="Applied">Applied</option>
+              <option value="Interviewing">Interviewing</option>
+              <option value="Rejected">Rejected</option>
+              <option value="Offers">Offers</option>
+            </select>
+
+            <textarea
+              name="notes"
+              id="notes"
+              placeholder="Notes"
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              className="col-span-2 font-inter px-4 py-2 border-2 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none resize-none h-30"
+            ></textarea>
+          </div>
+
+          <button
+            className="mt-4 bg-linear-to-r from-gray-50 to-white shadow-md px-4 py-1 border-2 border-zinc-500 rounded-2xl text-zinc-500 flex items-center gap-2 text-xl cursor-pointer hover:scale-105  transition-transform duration-200"
+            onClick={handleAddClick}
+          >
+            <div className="flex items-center gap-2">
+              <p>Save</p>
+              <IoIosArrowDropright size={25} />
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   );
+};
+
+ApplicationForm.propTypes = {
+  onSave: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ApplicationForm;
