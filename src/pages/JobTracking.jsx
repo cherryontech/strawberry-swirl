@@ -6,11 +6,11 @@ const JobTracking = () => {
   return (
     <div className=" bg-softPink flex flex-col items-left justify-start p-5 gap-5">
       <div className="flex flex-row">
-        <NavLink to={"/jobtracking"} className="w-1/2 gap-5">
-          <div className="bg-linear-to-r from-gray-50 to-white shadow-md ml-8 text-3xl  font-lora border border-none rounded-3xl p-8  text-left hover:border-2 hover:border-solid hover:border-blue-500">
+        
+          <div className="bg-linear-to-r from-gray-50 to-white shadow-md ml-8 text-3xl  font-lora border border-none rounded-3xl p-8 w-1/2  text-left hover:border-2 hover:border-solid hover:border-blue-500">
             Job Tracking
           </div>
-        </NavLink>
+        
         <NavLink to={"/"} className="w-1/4 gap-5">
           <div className="bg-linear-to-r from-gray-50 to-white shadow-md ml-8 text-3xl font-lora border border-none rounded-3xl p-8 text-left hover:border-2 hover:border-solid hover:border-blue-500 hover:underline hover:decoration-blue-500">
             Home
