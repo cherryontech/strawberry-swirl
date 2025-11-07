@@ -17,9 +17,7 @@ import AuthGuard from "./guards/AuthGuard.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <AuthGuard protectedContent={<App />} />
-    ),
+    element: <AuthGuard protectedContent={<App />} />,
     children: [
       { index: true, element: <Home /> },
       { path: "start", element: <Start /> },

@@ -1,41 +1,25 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+
 import PropTypes from "prop-types";
 
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 
-const ApplicationForm = ({ onSave, onClose }) => {
+const SavedJobForm = ({ onSave, onClose }) => {
   const [companyName, setCompanyName] = useState("");
   const [role, setRole] = useState("");
-  const [status, setStatus] = useState("");
-  const [date, setDate] = useState("");
+  const [link, setLink] = useState("");
   const [notes, setNotes] = useState("");
 
   const handleAddClick = () => {
-    const finalStatus = status || "Applied";
-    let finalDate = date;
-
-    if (!date) {
-      const currDate = new Date();
-      finalDate = currDate.toISOString().split("T")[0];
-    }
-
-    const newApp = {
-      id: uuidv4(),
-      companyName,
-      role,
-      status: finalStatus,
-      date: finalDate,
-      notes,
-    };
-    onSave(newApp);
+    const newSavedJob = { id: uuidv4(), companyName, role, link, notes };
+    onSave(newSavedJob);
 
     // Reset fields
     setCompanyName("");
     setRole("");
-    setStatus("");
-    setDate("");
+    setLink("");
     setNotes("");
   };
 
@@ -43,9 +27,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
     <div className="w-3/4 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
       <div className="flex flex-col">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="font-lora font-medium text-2xl">
-            Add new application
-          </h2>
+          <h2 className="font-lora font-medium text-2xl">Save new job</h2>
 
           <button
             onClick={onClose}
@@ -75,25 +57,12 @@ const ApplicationForm = ({ onSave, onClose }) => {
             />
 
             <input
-              type="date"
-              name="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="font-inter px-4 py-2 border-2 text-zinc-500 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
+              type="text"
+              placeholder="Link"
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
+              className="col-span-2 font-inter px-4 py-2 border-2 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
             />
-
-            <select
-              name="status"
-              value={status}
-              onChange={(e) => setStatus(e.target.value)}
-              className="font-inter px-4 py-2 border-2  text-zinc-500 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
-            >
-              <option value="">Select Status</option>
-              <option value="Applied">Applied</option>
-              <option value="Interviewing">Interviewing</option>
-              <option value="Rejected">Rejected</option>
-              <option value="Offers">Offers</option>
-            </select>
 
             <textarea
               name="notes"
@@ -120,9 +89,9 @@ const ApplicationForm = ({ onSave, onClose }) => {
   );
 };
 
-ApplicationForm.propTypes = {
+SavedJobForm.propTypes = {
   onSave: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 };
 
-export default ApplicationForm;
+export default SavedJobForm;
