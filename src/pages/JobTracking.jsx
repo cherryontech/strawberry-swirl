@@ -100,7 +100,7 @@ const JobTracking = () => {
 
                 <button
                   onClick={handleAddJobApp}
-                  className="bg-linear-to-r from-gray-50 to-white shadow-md px-4 py-2 border-2 border-zinc-500 rounded-3xl text-zinc-500 flex items-center gap-2 text-lg cursor-pointer hover:scale-105  transition-transform duration-200"
+                  className="bg-linear-to-r from-gray-50 to-white shadow-md px-4 py-1 border-2 border-zinc-500 rounded-3xl text-zinc-500 flex items-center gap-2 text-lg cursor-pointer hover:scale-105  transition-transform duration-200"
                 >
                   <p>ADD</p>
                   <IoIosAddCircleOutline size={25} />
@@ -134,7 +134,7 @@ const JobTracking = () => {
 
                 <button
                   onClick={handleAddSavedJob}
-                  className="bg-linear-to-r from-gray-50 to-white shadow-md px-4 py-2 border-2 border-zinc-500 rounded-3xl text-zinc-500 flex items-center gap-2 text-xl cursor-pointer hover:scale-105  transition-transform duration-200"
+                  className="bg-linear-to-r from-gray-50 to-white shadow-md px-4 py-1 border-2 border-zinc-500 rounded-3xl text-zinc-500 flex items-center gap-2 text-lg cursor-pointer hover:scale-105  transition-transform duration-200"
                 >
                   <p>ADD</p>
                   <IoIosAddCircleOutline size={25} />

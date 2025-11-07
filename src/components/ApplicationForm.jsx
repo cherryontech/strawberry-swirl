@@ -13,7 +13,22 @@ const ApplicationForm = ({ onSave, onClose }) => {
   const [notes, setNotes] = useState("");
 
   const handleAddClick = () => {
-    const newApp = { id: uuidv4(), companyName, role, status, date, notes };
+    const finalStatus = status || "Applied";
+    let finalDate = date;
+
+    if (!date) {
+      const currDate = new Date();
+      finalDate = currDate.toISOString().split("T")[0];
+    }
+
+    const newApp = {
+      id: uuidv4(),
+      companyName,
+      role,
+      status: finalStatus,
+      date: finalDate,
+      notes,
+    };
     onSave(newApp);
 
     // Reset fields
