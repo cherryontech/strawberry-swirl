@@ -4,7 +4,73 @@
 @import "tailwindcss";
 
 @theme {
-  --color-softPink: #fff0f3;
   --font-lora: Lora, serif;
   --font-inter: Inter, sans-serif;
+
+  --color-softPink: #fff0f3; /* Delete later */
+
+  /* Color system */
+  --color-backgroundColor: #f4ecda;
+  --color-deepOrange: #b5431f;
+  --color-accentOrange: #ff7514;
+  --color-white: #fbf9f3;
+  --color-bordeaux: #782e19;
+
+  /* Type scale */
+  --text-h1: 47px;
+  --text-h2: 39px;
+  --text-h3: 33px;
+  --text-h4: 27px;
+  --text-h5: 23px;
+  --text-h6: 19px;
+  --text-p: 16px;
+  --text-sm: 13px;
+  --text-xs: 11px;
+}
+
+@layer base {
+  h1 {
+    font-size: var(--text-h1);
+    @apply font-lora;
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    @apply font-inter;
+  }
+
+  h3 {
+    font-size: var(--text-h3);
+    @apply font-inter;
+  }
+
+  h4 {
+    font-size: var(--text-h4);
+    @apply font-inter;
+  }
+
+  h5 {
+    font-size: var(--text-h5);
+    @apply font-inter;
+  }
+
+  h6 {
+    font-size: var(--text-h6);
+    @apply font-inter;
+  }
+
+  p {
+    font-size: var(--text-p);
+    @apply font-inter;
+  }
+
+  .text-sm {
+    font-size: var(--text-sm);
+    @apply font-inter;
+  }
+
+  .text-xs {
+    font-size: var(--text-xs);
+    @apply font-inter;
+  }
 }
