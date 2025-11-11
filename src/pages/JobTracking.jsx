@@ -1,6 +1,6 @@
-import { NavLink } from "react-router";
 import { useEffect, useState } from "react";
 
+import Navbar from "../components/Navbar";
 import JobApplication from "../components/JobApplication";
 import SavedJob from "../components/SavedJob";
 import JobStats from "../components/JobStats";
@@ -56,26 +56,8 @@ const JobTracking = () => {
   };
 
   return (
-    <div className="bg-softPink min-h-screen px-12 py-8">
-      {/* Header */}
-      <header className="flex justify-between mb-12">
-        <div className="w-1/2 bg-linear-to-r from-gray-50 to-white shadow-md text-3xl font-lora rounded-3xl p-8 text-left">
-          Job Tracking
-        </div>
-
-        <nav className="flex gap-8">
-          <NavLink to={"/"}>
-            <div className="bg-linear-to-r from-gray-50 to-white shadow-md text-3xl font-lora rounded-3xl p-8">
-              Home
-            </div>
-          </NavLink>
-          <NavLink to={"/resources"}>
-            <div className="bg-linear-to-r from-gray-50 to-white shadow-md text-3xl font-lora rounded-3xl p-8">
-              Resources
-            </div>
-          </NavLink>
-        </nav>
-      </header>
+    <div className="bg-backgroundColor min-h-screen px-24 py-8">
+      <Navbar />
 
       <main className="flex flex-row gap-8 items-start">
         {/* Jobs Dashboard / Job Forms*/}
@@ -90,30 +72,31 @@ const JobTracking = () => {
             onClose={() => setAddingSavedJob(false)}
           />
         ) : (
-          <div className="w-3/4 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
+          <div className="w-3/4 rounded-3xl bg-white shadow-md p-10">
             {/* Recent Applications Section */}
             <div className="flex flex-col">
               <div className="flex justify-between items-center mb-8">
-                <h2 className="font-lora font-medium text-2xl">
-                  Recent Applications
-                </h2>
+                <h4 className="text-bordeaux font-medium">
+                  Recent applications
+                </h4>
 
                 <button
                   onClick={handleAddJobApp}
-                  className="bg-linear-to-r from-gray-50 to-white shadow-md px-4 py-1 border-2 border-zinc-500 rounded-3xl text-zinc-500 flex items-center gap-2 text-lg cursor-pointer hover:scale-105  transition-transform duration-200"
+                  className="bg-white shadow-md px-4 py-2 border-2 border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
                 >
                   <p>ADD</p>
                   <IoIosAddCircleOutline size={25} />
                 </button>
               </div>
 
-              <div className="w-full flex border-b-2 border-gray-300 pb-2 mb-4">
-                <p className="w-1/4 font-lora font-semibold text-lg">Company</p>
-                <p className="w-1/4 font-lora font-semibold text-lg">Role</p>
-                <p className="w-1/4 font-lora font-semibold text-lg">
+              <div className="w-full flex border-b border-deepOrange pb-2">
+                <h6 className="w-1/4 text-deepOrange font-semibold">Company</h6>
+                <h6 className="w-3/8 text-deepOrange font-semibold">Role</h6>
+                <h6 className="w-1/6 text-deepOrange font-semibold">
                   Date Applied
-                </p>
-                <p className="w-1/4 font-lora font-semibold text-lg">Status</p>
+                </h6>
+                <h6 className="w-1/6 text-deepOrange font-semibold">Status</h6>
+                <div className="w-24" /> {/* placeholder for icon column */}
               </div>
 
               {jobApps.map((app) => (
@@ -130,21 +113,21 @@ const JobTracking = () => {
             {/* Saved Jobs Section */}
             <div className="flex flex-col mt-8">
               <div className="flex justify-between items-center mb-8">
-                <h2 className="font-lora font-medium text-2xl">Saved Jobs</h2>
-
+                <h4 className="text-bordeaux font-medium">Saved jobs</h4>
                 <button
                   onClick={handleAddSavedJob}
-                  className="bg-linear-to-r from-gray-50 to-white shadow-md px-4 py-1 border-2 border-zinc-500 rounded-3xl text-zinc-500 flex items-center gap-2 text-lg cursor-pointer hover:scale-105  transition-transform duration-200"
+                  className="bg-white shadow-md px-4 py-2 border-2 border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
                 >
                   <p>ADD</p>
                   <IoIosAddCircleOutline size={25} />
                 </button>
               </div>
 
-              <div className="w-full flex border-b-2 border-gray-300 pb-2 mb-4">
-                <p className="w-1/3 font-lora font-semibold text-lg">Company</p>
-                <p className="w-1/3 font-lora font-semibold text-lg">Role</p>
-                <p className="w-1/3 font-lora font-semibold text-lg">Link</p>
+              <div className="w-full flex border-b border-deepOrange pb-2">
+                <h6 className="w-1/3 text-deepOrange font-semibold">Company</h6>
+                <h6 className="w-1/3 text-deepOrange font-semibold">Role</h6>
+                <h6 className="w-1/3 text-deepOrange font-semibold">Link</h6>
+                <div className="w-24" /> {/* placeholder for icon column */}
               </div>
 
               {savedJobs.map((job) => (

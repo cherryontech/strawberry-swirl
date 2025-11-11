@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 import JobApplication from "../components/JobApplication";
 import SavedJob from "../components/SavedJob";
-import MotivationBuddy from "../components/MotivationBuddy";
+// import MotivationBuddy from "../components/MotivationBuddy";
 
 const Home = () => {
   const username = localStorage.getItem("userName");
@@ -71,7 +71,7 @@ const Home = () => {
         </div>
 
         {/* Motivation Buddy Component */}
-        <MotivationBuddy />
+        {/* <MotivationBuddy /> */}
       </main>
     </div>
   );
