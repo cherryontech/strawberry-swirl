@@ -98,6 +98,20 @@ const JobTracking = () => {
     setCurrentSavedJob(null);
   };
 
+  // Logic for Delete Job App
+  const handleDeleteJobApp = (id) => {
+    const updatedApps = jobApps.filter((app) => app.id !== id);
+    setJobApps(updatedApps);
+    localStorage.setItem("applications", JSON.stringify(updatedApps));
+  };
+
+  // Logic for Delete Saved Job
+  const handleDeleteSavedJob = (id) => {
+    const updatedSavedJobs = savedJobs.filter((job) => job.id !== id);
+    setSavedJobs(updatedSavedJobs);
+    localStorage.setItem("savedJobs", JSON.stringify(updatedSavedJobs));
+  };
+
   return (
     <div className="bg-backgroundColor min-h-screen px-30 py-8">
       <Navbar />
@@ -163,6 +177,7 @@ const JobTracking = () => {
                   status={app.status}
                   notes={app.notes}
                   onEdit={handleEditJobApp}
+                  onDelete={handleDeleteJobApp}
                 />
               ))}
             </div>
@@ -196,6 +211,7 @@ const JobTracking = () => {
                   link={job.link}
                   notes={job.notes}
                   onEdit={handleEditSavedJob}
+                  onDelete={handleDeleteSavedJob}
                 />
               ))}
             </div>

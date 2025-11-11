@@ -12,6 +12,7 @@ const JobApplication = ({
   status,
   notes,
   onEdit,
+  onDelete,
 }) => {
   return (
     <div className="flex items-center gap-2 w-full pt-4 pb-2 border-b border-backgroundColor">
@@ -38,7 +39,7 @@ const JobApplication = ({
             title="Edit"
           />
         </button>
-        <button>
+        <button onClick={() => onDelete(id)}>
           <FaRegTrashAlt
             size={20}
             className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
@@ -58,6 +59,7 @@ JobApplication.propTypes = {
   status: PropTypes.string.isRequired,
   notes: PropTypes.string.isRequired,
   onEdit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default JobApplication;
