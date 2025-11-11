@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 
 import Navbar from "../components/Navbar";
+import JobStats from "../components/JobStats";
+
 import JobApplication from "../components/JobApplication";
 import SavedJob from "../components/SavedJob";
-import JobStats from "../components/JobStats";
+
 import ApplicationForm from "../components/ApplicationForm";
 import SavedJobForm from "../components/SavedJobForm";
+import EditApplicationForm from "../components/EditApplicationForm";
 
 import { IoIosAddCircleOutline } from "react-icons/io";
 
@@ -55,6 +58,26 @@ const JobTracking = () => {
     setAddingSavedJob(false);
   };
 
+  // Logic for Edit Job Application
+
+  const [editingJobApp, setEditingJobApp] = useState(false);
+  const [currentJobApp, setCurrentJobApp] = useState(null);
+
+  const handleEditJobApp = (job) => {
+    setCurrentJobApp(job);
+    setEditingJobApp(true);
+  };
+
+  const handleSaveEditJobApp = (editedJob) => {
+    const updatedApps = jobApps.map((app) =>
+      app.id === editedJob.id ? editedJob : app,
+    );
+    setJobApps(updatedApps);
+    localStorage.setItem("applications", JSON.stringify(updatedApps));
+    setEditingJobApp(false);
+    setCurrentJobApp(null);
+  };
+
   return (
     <div className="bg-backgroundColor min-h-screen px-30 py-8">
       <Navbar />
@@ -70,6 +93,12 @@ const JobTracking = () => {
           <SavedJobForm
             onSave={handleSaveNewSavedJob}
             onClose={() => setAddingSavedJob(false)}
+          />
+        ) : editingJobApp ? (
+          <EditApplicationForm
+            job={currentJobApp}
+            onSave={handleSaveEditJobApp}
+            onClose={() => setEditingJobApp(false)}
           />
         ) : (
           <div className="w-4/5 rounded-3xl bg-white shadow-md p-10">
@@ -102,10 +131,13 @@ const JobTracking = () => {
               {jobApps.map((app) => (
                 <JobApplication
                   key={app.id}
+                  id={app.id}
                   company={app.companyName}
                   role={app.role}
                   dateApplied={app.date}
                   status={app.status}
+                  notes={app.notes}
+                  onEdit={handleEditJobApp}
                 />
               ))}
             </div>

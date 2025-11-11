@@ -11,21 +11,27 @@ const SavedJob = ({ company, role, link }) => {
       <p className="w-1/3 truncate">{role}</p>
       <p className="w-1/3 truncate">{link}</p>
       <div className="flex items-center gap-2 w-24 justify-end">
-        <FaRegStickyNote
-          size={20}
-          className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
-          title="Notes"
-        />
-        <LuPencil
-          size={20}
-          className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
-          title="Edit"
-        />
-        <FaRegTrashAlt
-          size={20}
-          className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
-          title="Delete"
-        />
+        <button>
+          <FaRegStickyNote
+            size={20}
+            className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
+            title="Notes"
+          />
+        </button>
+        <button>
+          <LuPencil
+            size={20}
+            className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
+            title="Edit"
+          />
+        </button>
+        <button>
+          <FaRegTrashAlt
+            size={20}
+            className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
+            title="Delete"
+          />
+        </button>
       </div>
     </div>
   );
