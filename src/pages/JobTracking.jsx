@@ -112,6 +112,20 @@ const JobTracking = () => {
     localStorage.setItem("savedJobs", JSON.stringify(updatedSavedJobs));
   };
 
+  // Logic for load more job apps
+  const [numJobApps, setNumJobApps] = useState(8);
+
+  const handleLoadMoreJobApps = () => {
+    setNumJobApps((prev) => prev + 8);
+  };
+
+  // Logic for load more saved jobs
+  const [numSavedJobs, setNumSavedJobs] = useState(4);
+
+  const handleLoadMoreSavedJobs = () => {
+    setNumSavedJobs((prev) => prev + 4);
+  };
+
   return (
     <div className="bg-backgroundColor min-h-screen px-30 py-8">
       <Navbar />
@@ -178,6 +192,7 @@ const JobTracking = () => {
 
                   return b.originalIndex - a.originalIndex;
                 })
+                .slice(0, numJobApps)
                 .map((app) => (
                   <JobApplication
                     key={app.id}
@@ -191,6 +206,15 @@ const JobTracking = () => {
                     onDelete={handleDeleteJobApp}
                   />
                 ))}
+
+              {numJobApps < jobApps.length && (
+                <button
+                  onClick={handleLoadMoreJobApps}
+                  className="mt-4 border border-deepOrange text-deepOrange px-4 py-2 rounded-3xl font-medium text-sm hover:scale-105 transition-transform duration-200 w-fit self-center cursor-pointer"
+                >
+                  Load More
+                </button>
+              )}
             </div>
 
             {/* Saved Jobs Section */}
@@ -213,18 +237,30 @@ const JobTracking = () => {
                 <div className="w-24" /> {/* placeholder for icon column */}
               </div>
 
-              {[...savedJobs].reverse().map((job) => (
-                <SavedJob
-                  key={job.id}
-                  id={job.id}
-                  company={job.companyName}
-                  role={job.role}
-                  link={job.link}
-                  notes={job.notes}
-                  onEdit={handleEditSavedJob}
-                  onDelete={handleDeleteSavedJob}
-                />
-              ))}
+              {[...savedJobs]
+                .reverse()
+                .slice(0, numSavedJobs)
+                .map((job) => (
+                  <SavedJob
+                    key={job.id}
+                    id={job.id}
+                    company={job.companyName}
+                    role={job.role}
+                    link={job.link}
+                    notes={job.notes}
+                    onEdit={handleEditSavedJob}
+                    onDelete={handleDeleteSavedJob}
+                  />
+                ))}
+
+              {numSavedJobs < savedJobs.length && (
+                <button
+                  onClick={handleLoadMoreSavedJobs}
+                  className="mt-4 border border-deepOrange text-deepOrange px-4 py-2 rounded-3xl font-medium text-sm hover:scale-105 transition-transform duration-200 w-fit self-center cursor-pointer"
+                >
+                  Load More
+                </button>
+              )}
             </div>
           </div>
         )}

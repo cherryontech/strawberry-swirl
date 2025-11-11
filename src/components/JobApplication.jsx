@@ -15,7 +15,7 @@ const JobApplication = ({
   onDelete,
 }) => {
   return (
-    <div className="flex items-center gap-2 w-full pt-4 pb-2 border-b border-backgroundColor">
+    <div className="flex items-center w-full pt-4 pb-2 border-b border-backgroundColor">
       <p className="w-1/4 truncate">{company}</p>
       <p className="w-3/8 truncate">{role}</p>
       <p className="w-1/6 truncate">{dateApplied}</p>
