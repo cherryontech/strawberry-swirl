@@ -9,6 +9,7 @@ import SavedJob from "../components/SavedJob";
 import ApplicationForm from "../components/ApplicationForm";
 import SavedJobForm from "../components/SavedJobForm";
 import EditApplicationForm from "../components/EditApplicationForm";
+import EditSavedJobForm from "../components/EditSavedJobForm";
 
 import { IoIosAddCircleOutline } from "react-icons/io";
 
@@ -78,12 +79,30 @@ const JobTracking = () => {
     setCurrentJobApp(null);
   };
 
+  // Logic for Edit Saved Job
+  const [editingSavedJob, setEditingSavedJob] = useState(false);
+  const [currentSavedJob, setCurrentSavedJob] = useState(null);
+
+  const handleEditSavedJob = (job) => {
+    setCurrentSavedJob(job);
+    setEditingSavedJob(true);
+  };
+
+  const handleSaveEditSavedJob = (editedJob) => {
+    const updatedSavedJobs = savedJobs.map((job) =>
+      job.id === editedJob.id ? editedJob : job,
+    );
+    setSavedJobs(updatedSavedJobs);
+    localStorage.setItem("savedJobs", JSON.stringify(updatedSavedJobs));
+    setEditingSavedJob(false);
+    setCurrentSavedJob(null);
+  };
+
   return (
     <div className="bg-backgroundColor min-h-screen px-30 py-8">
       <Navbar />
 
       <main className="flex flex-row gap-8 items-start">
-        {/* Jobs Dashboard / Job Forms*/}
         {addingJobApp ? (
           <ApplicationForm
             onSave={handleSaveNewJob}
@@ -99,6 +118,12 @@ const JobTracking = () => {
             job={currentJobApp}
             onSave={handleSaveEditJobApp}
             onClose={() => setEditingJobApp(false)}
+          />
+        ) : editingSavedJob ? (
+          <EditSavedJobForm
+            job={currentSavedJob}
+            onSave={handleSaveEditSavedJob}
+            onClose={() => setEditingSavedJob(false)}
           />
         ) : (
           <div className="w-4/5 rounded-3xl bg-white shadow-md p-10">
@@ -165,9 +190,12 @@ const JobTracking = () => {
               {savedJobs.map((job) => (
                 <SavedJob
                   key={job.id}
+                  id={job.id}
                   company={job.companyName}
                   role={job.role}
                   link={job.link}
+                  notes={job.notes}
+                  onEdit={handleEditSavedJob}
                 />
               ))}
             </div>

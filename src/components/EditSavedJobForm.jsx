@@ -1,44 +1,26 @@
 import { useState } from "react";
+
 import PropTypes from "prop-types";
 
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 
-const EditApplicationForm = ({ job, onSave, onClose }) => {
+const EditSavedJobForm = ({ job, onSave, onClose }) => {
   const [companyName, setCompanyName] = useState(job.company);
   const [role, setRole] = useState(job.role);
-  const [status, setStatus] = useState(job.status);
-  const [date, setDate] = useState(job.dateApplied);
+  const [link, setLink] = useState(job.link);
   const [notes, setNotes] = useState(job.notes);
 
   const handleSaveClick = () => {
-    const finalStatus = status || "Applied";
-    let finalDate = date;
-
-    if (!date) {
-      const today = new Date();
-      const localYear = today.getFullYear();
-      const localMonth = today.getMonth() + 1;
-      const localDay = today.getDate();
-      finalDate = `${localYear}-${localMonth}-${localDay}`;
-    }
-
-    const newApp = {
-      id: job.id,
-      companyName,
-      role,
-      status: finalStatus,
-      date: finalDate,
-      notes,
-    };
-    onSave(newApp);
+    const newSavedJob = { id: job.id, companyName, role, link, notes };
+    onSave(newSavedJob);
   };
 
   return (
     <div className="w-4/5 rounded-3xl bg-white shadow-md p-10">
       <div className="flex flex-col">
         <div className="flex justify-between items-center mb-8">
-          <h4 className="text-bordeaux font-medium">Edit job application</h4>
+          <h4 className="text-bordeaux font-medium">Save new job</h4>
 
           <button
             onClick={onClose}
@@ -68,25 +50,12 @@ const EditApplicationForm = ({ job, onSave, onClose }) => {
             />
 
             <input
-              type="date"
-              name="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
+              type="text"
+              placeholder="Link"
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
+              className="col-span-2 font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
-
-            <select
-              name="status"
-              value={status}
-              onChange={(e) => setStatus(e.target.value)}
-              className="font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
-            >
-              <option value="">Select Status</option>
-              <option value="Applied">Applied</option>
-              <option value="Interviewing">Interviewing</option>
-              <option value="Rejected">Rejected</option>
-              <option value="Offers">Offers</option>
-            </select>
 
             <textarea
               name="notes"
@@ -113,10 +82,10 @@ const EditApplicationForm = ({ job, onSave, onClose }) => {
   );
 };
 
-EditApplicationForm.propTypes = {
+EditSavedJobForm.propTypes = {
   job: PropTypes.object.isRequired,
   onSave: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 };
 
-export default EditApplicationForm;
+export default EditSavedJobForm;
