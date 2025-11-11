@@ -167,19 +167,30 @@ const JobTracking = () => {
                 <div className="w-24" /> {/* placeholder for icon column */}
               </div>
 
-              {jobApps.map((app) => (
-                <JobApplication
-                  key={app.id}
-                  id={app.id}
-                  company={app.companyName}
-                  role={app.role}
-                  dateApplied={app.date}
-                  status={app.status}
-                  notes={app.notes}
-                  onEdit={handleEditJobApp}
-                  onDelete={handleDeleteJobApp}
-                />
-              ))}
+              {[...jobApps]
+                .map((app, index) => ({ ...app, originalIndex: index }))
+                .sort((a, b) => {
+                  const dateDiff = new Date(b.date) - new Date(a.date);
+
+                  if (dateDiff !== 0) {
+                    return dateDiff;
+                  }
+
+                  return b.originalIndex - a.originalIndex;
+                })
+                .map((app) => (
+                  <JobApplication
+                    key={app.id}
+                    id={app.id}
+                    company={app.companyName}
+                    role={app.role}
+                    dateApplied={app.date}
+                    status={app.status}
+                    notes={app.notes}
+                    onEdit={handleEditJobApp}
+                    onDelete={handleDeleteJobApp}
+                  />
+                ))}
             </div>
 
             {/* Saved Jobs Section */}
@@ -202,7 +213,7 @@ const JobTracking = () => {
                 <div className="w-24" /> {/* placeholder for icon column */}
               </div>
 
-              {savedJobs.map((job) => (
+              {[...savedJobs].reverse().map((job) => (
                 <SavedJob
                   key={job.id}
                   id={job.id}

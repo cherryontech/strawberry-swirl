@@ -11,13 +11,15 @@ const SavedJob = ({ id, company, role, link, notes, onEdit, onDelete }) => {
       <p className="w-1/3 truncate">{role}</p>
       <p className="w-1/3 truncate">{link}</p>
       <div className="flex items-center gap-2 w-24 justify-end">
-        <button>
-          <FaRegStickyNote
-            size={20}
-            className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
-            title="Notes"
-          />
-        </button>
+        {notes && (
+          <button>
+            <FaRegStickyNote
+              size={20}
+              className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
+              title="Notes"
+            />
+          </button>
+        )}
         <button onClick={() => onEdit({ id, company, role, link, notes })}>
           <LuPencil
             size={20}

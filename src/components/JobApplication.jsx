@@ -21,13 +21,15 @@ const JobApplication = ({
       <p className="w-1/6 truncate">{dateApplied}</p>
       <p className="w-1/6 truncate">{status}</p>
       <div className="flex items-center gap-2 w-24 justify-end">
-        <button>
-          <FaRegStickyNote
-            size={20}
-            className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
-            title="Notes"
-          />
-        </button>
+        {notes && (
+          <button>
+            <FaRegStickyNote
+              size={20}
+              className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
+              title="Notes"
+            />
+          </button>
+        )}
         <button
           onClick={() =>
             onEdit({ id, company, role, dateApplied, status, notes })
