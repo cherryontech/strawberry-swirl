@@ -1,6 +1,6 @@
-import { NavLink } from "react-router";
 import { useEffect, useState } from "react";
 
+import Navbar from "../components/Navbar";
 import JobApplication from "../components/JobApplication";
 import SavedJob from "../components/SavedJob";
 import JobStats from "../components/JobStats";
@@ -56,26 +56,8 @@ const JobTracking = () => {
   };
 
   return (
-    <div className="bg-softPink min-h-screen px-12 py-8">
-      {/* Header */}
-      <header className="flex justify-between mb-12">
-        <div className="w-1/2 bg-linear-to-r from-gray-50 to-white shadow-md text-3xl font-lora rounded-3xl p-8 text-left">
-          Job Tracking
-        </div>
-
-        <nav className="flex gap-8">
-          <NavLink to={"/"}>
-            <div className="bg-linear-to-r from-gray-50 to-white shadow-md text-3xl font-lora rounded-3xl p-8">
-              Home
-            </div>
-          </NavLink>
-          <NavLink to={"/resources"}>
-            <div className="bg-linear-to-r from-gray-50 to-white shadow-md text-3xl font-lora rounded-3xl p-8">
-              Resources
-            </div>
-          </NavLink>
-        </nav>
-      </header>
+    <div className="bg-backgroundColor min-h-screen px-12 py-8">
+      <Navbar />
 
       <main className="flex flex-row gap-8 items-start">
         {/* Jobs Dashboard / Job Forms*/}
