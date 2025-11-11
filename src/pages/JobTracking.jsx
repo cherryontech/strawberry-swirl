@@ -56,7 +56,7 @@ const JobTracking = () => {
   };
 
   return (
-    <div className="bg-backgroundColor min-h-screen px-24 py-8">
+    <div className="bg-backgroundColor min-h-screen px-30 py-8">
       <Navbar />
 
       <main className="flex flex-row gap-8 items-start">
@@ -72,7 +72,7 @@ const JobTracking = () => {
             onClose={() => setAddingSavedJob(false)}
           />
         ) : (
-          <div className="w-3/4 rounded-3xl bg-white shadow-md p-10">
+          <div className="w-4/5 rounded-3xl bg-white shadow-md p-10">
             {/* Recent Applications Section */}
             <div className="flex flex-col">
               <div className="flex justify-between items-center mb-8">
