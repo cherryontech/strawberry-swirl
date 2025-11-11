@@ -15,14 +15,17 @@ const JobApplication = ({ company, role, dateApplied, status }) => {
         <FaRegStickyNote
           size={20}
           className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
+          title="Notes"
         />
         <LuPencil
           size={20}
           className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
+          title="Edit"
         />
         <FaRegTrashAlt
           size={20}
           className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
+          title="Delete"
         />
       </div>
     </div>

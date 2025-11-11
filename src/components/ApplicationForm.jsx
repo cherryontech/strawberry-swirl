@@ -17,8 +17,11 @@ const ApplicationForm = ({ onSave, onClose }) => {
     let finalDate = date;
 
     if (!date) {
-      const currDate = new Date();
-      finalDate = currDate.toISOString().split("T")[0];
+      const today = new Date();
+      const localYear = today.getFullYear();
+      const localMonth = today.getMonth() + 1;
+      const localDay = today.getDate();
+      finalDate = `${localYear}-${localMonth}-${localDay}`;
     }
 
     const newApp = {
@@ -40,16 +43,14 @@ const ApplicationForm = ({ onSave, onClose }) => {
   };
 
   return (
-    <div className="w-3/4 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
+    <div className="w-4/5 rounded-3xl bg-white shadow-md p-10">
       <div className="flex flex-col">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="font-lora font-medium text-2xl">
-            Add new application
-          </h2>
+          <h4 className="text-bordeaux font-medium">Add new application</h4>
 
           <button
             onClick={onClose}
-            className="text-zinc-500 cursor-pointer hover:scale-105  transition-transform duration-200"
+            className="text-deepOrange cursor-pointer hover:scale-105 transition-transform duration-200"
           >
             <IoIosCloseCircleOutline size={30} />
           </button>
@@ -63,7 +64,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
               placeholder="Company Name"
               value={companyName}
               onChange={(e) => setCompanyName(e.target.value)}
-              className="font-inter px-4 py-2 border-2 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
+              className="font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
 
             <input
@@ -71,7 +72,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
               placeholder="Role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="font-inter px-4 py-2 border-2 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
+              className="font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
 
             <input
@@ -79,14 +80,14 @@ const ApplicationForm = ({ onSave, onClose }) => {
               name="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="font-inter px-4 py-2 border-2 text-zinc-500 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
+              className="font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
 
             <select
               name="status"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="font-inter px-4 py-2 border-2  text-zinc-500 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none"
+              className="font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             >
               <option value="">Select Status</option>
               <option value="Applied">Applied</option>
@@ -101,12 +102,12 @@ const ApplicationForm = ({ onSave, onClose }) => {
               placeholder="Notes"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="col-span-2 font-inter px-4 py-2 border-2 border-zinc-500 rounded-2xl bg-white w-full focus:text-zinc-900 focus:outline-none resize-none h-30"
+              className="col-span-2 font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange resize-none h-30"
             ></textarea>
           </div>
 
           <button
-            className="mt-4 bg-linear-to-r from-gray-50 to-white shadow-md px-4 py-1 border-2 border-zinc-500 rounded-2xl text-zinc-500 flex items-center gap-2 text-xl cursor-pointer hover:scale-105  transition-transform duration-200"
+            className="mt-4 bg-white shadow-md px-4 py-2 border-2 border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
             onClick={handleAddClick}
           >
             <div className="flex items-center gap-2">

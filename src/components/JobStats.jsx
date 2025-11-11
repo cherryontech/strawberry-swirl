@@ -19,13 +19,13 @@ const Statuses = () => {
     return amt;
   }
 
-  const totalNumOfApps = (
-    JSON.parse(localStorage.getItem("applications")) || []
-  ).length;
-
   const totalNumOfSavedJobs = (
     JSON.parse(localStorage.getItem("savedJobs")) || []
   ).length;
+
+  const totalNumOfApps =
+    (JSON.parse(localStorage.getItem("applications")) || []).length +
+    totalNumOfSavedJobs;
 
   return (
     <div className="w-1/5 rounded-3xl bg-white shadow-md px-8 py-10">
