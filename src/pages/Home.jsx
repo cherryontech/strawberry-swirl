@@ -1,7 +1,7 @@
 import JobApplication from "../components/JobApplication";
 import SavedJob from "../components/SavedJob";
 import Navbar from "../components/Navbar";
-// import MotivationBuddy from "../components/MotivationBuddy";
+import MotivationBuddy from "../components/MotivationBuddy";
 
 const Home = () => {
   return (
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
 
         {/* Motivation Buddy Component */}
-        {/* <MotivationBuddy /> */}
+        <MotivationBuddy />
       </main>
     </div>
   );
