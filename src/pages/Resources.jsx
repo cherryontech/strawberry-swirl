@@ -1,29 +1,10 @@
-import React from "react";
-import "../index.css";
-import { NavLink } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const Resources = () => {
   return (
     <div className="bg-softPink min-h-screen px-12 py-8">
-      {/* Header */}
-      <header className="flex justify-between mb-12">
-        <div className="w-1/2 bg-linear-to-r from-gray-50 to-white shadow-md text-3xl font-lora rounded-3xl p-8 text-left">
-          Resouces
-        </div>
+      <Navbar />
 
-        <nav className="flex gap-8">
-          <NavLink to={"/"}>
-            <div className="bg-linear-to-r from-gray-50 to-white shadow-md text-3xl font-lora rounded-3xl p-8">
-              Home
-            </div>
-          </NavLink>
-          <NavLink to={"/jobtracking"}>
-            <div className="bg-linear-to-r from-gray-50 to-white shadow-md text-3xl font-lora rounded-3xl p-8">
-              Job Tracking
-            </div>
-          </NavLink>
-        </nav>
-      </header>
       <div className="flex flex-row items-center justify-center mt-5 ml-auto mr-auto gap-15">
         <button
           type="button"
