@@ -2,8 +2,6 @@ import { useRef } from "react";
 import { GoArrowRight } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 
-import "../index.css";
-
 const Onboarding = () => {
   const userNameRef = useRef(null);
   const navigate = useNavigate();
