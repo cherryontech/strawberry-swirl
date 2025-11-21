@@ -5,7 +5,7 @@ import ProgressSection from "./ProgressSection.jsx";
 
 const MotivationBuddy = () => {
   const total = 50;
-  const applied = 5; // TODO: Receive the actual application count from the parent component
+  const applied = (JSON.parse(localStorage.getItem("applications")) || []).length;
 
   return (
     <div className="w-1/2 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md px-14 py-12">
