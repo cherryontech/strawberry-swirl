@@ -34,16 +34,16 @@ export default function MotivationalQuotes() {
   const { q, a } = QUOTES[currentIndex];
 
   return (
-    <div className="flex flex-col justify-start items-left rounded-2xl bg-linear-to-r from-gray-50 to-white shadow-md">
+    <div className="flex flex-col justify-start items-left rounded-2xl">
       <div
         className={`transition-opacity duration-500 ${
           fade ? "opacity-100" : "opacity-0"
         }`}
       >
-        <p className="text-xl md:text-2xl text-center m-4 mt-5 font-lora">
-          {q}
+        <p className="text-xl md:text-2xl text-center m-4 mt-5">
+          <q>{q}</q>
         </p>
-        <p className="text-lg md:text-xl text-center mb-4 font-lora">- {a}</p>
+        <p className="text-base md:text-lg text-center font-light mb-4">- {a}</p>
       </div>
     </div>
   );
