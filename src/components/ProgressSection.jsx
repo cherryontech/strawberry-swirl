@@ -1,3 +1,5 @@
+import { ValidationStrategy as PropTypes } from "@eslint/object-schema";
+
 export default function ProgressSection({ applied, total }) {
   const ratio = applied / total;
 
@@ -18,3 +20,8 @@ export default function ProgressSection({ applied, total }) {
     </div>
   );
 }
+
+ProgressSection.propTypes = {
+  applied: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+};

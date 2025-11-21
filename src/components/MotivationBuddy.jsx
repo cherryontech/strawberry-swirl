@@ -13,7 +13,7 @@ const MotivationBuddy = () => {
         <h2 className="text-bordeaux font-medium text-2xl mb-8 text-center">
           Your Motivation Buddy
         </h2>
-        <MotivationIcon applied={applied}/>
+        <MotivationIcon applied={applied} />
         <MotivationalQuotes />
         <ProgressSection applied={applied} total={total} />
       </div>
