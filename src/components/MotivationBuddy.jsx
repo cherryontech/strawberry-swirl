@@ -10,7 +10,7 @@ const MotivationBuddy = () => {
   ).length;
 
   return (
-    <div className="w-1/2 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md px-14 py-12">
+    <div className="w-1/2 rounded-3xl bg-white shadow-md px-14 py-12">
       <div className="flex flex-col">
         <h2 className="text-bordeaux font-medium text-2xl mb-8 text-center">
           Your Motivation Buddy
