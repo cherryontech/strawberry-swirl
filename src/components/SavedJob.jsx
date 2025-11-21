@@ -18,7 +18,14 @@ const SavedJob = ({ id, company, role, link, notes, onEdit, onDelete }) => {
       <div className="flex items-center w-full">
         <p className="w-1/3 truncate">{company}</p>
         <p className="w-1/3 truncate">{role}</p>
-        <p className="w-1/3 truncate">{link}</p>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-1/3 truncate"
+        >
+          {link}
+        </a>
 
         <div className="flex items-center gap-2 w-24 justify-end">
           {notes && (
