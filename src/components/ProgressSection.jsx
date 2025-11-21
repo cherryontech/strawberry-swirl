@@ -14,8 +14,8 @@ export default function ProgressSection({ applicationsCount, total }) {
         ></div>
       </div>
 
-      <p className="mt-3 text-bordeaux text-center text-sm">
-        You&apos;ve applicationsCount to {applicationsCount} out of {total} jobs!
+      <p className="mt-3 text-bordeaux text-center">
+        You&apos;ve applied to {applicationsCount} out of {total} jobs!
       </p>
     </div>
   );
