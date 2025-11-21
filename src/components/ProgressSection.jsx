@@ -5,7 +5,7 @@ export default function ProgressSection({ applicationsCount, total }) {
 
   return (
     <div className="mt-4">
-      <p className="text-base font-light mb-2">Progress</p>
+      <h6 className="mb-2">Progress</h6>
 
       <div className="h-6 w-full bg-darkBeige rounded-full overflow-hidden">
         <div
