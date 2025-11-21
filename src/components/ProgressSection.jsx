@@ -1,7 +1,7 @@
 import { ValidationStrategy as PropTypes } from "@eslint/object-schema";
 
-export default function ProgressSection({ applied, total }) {
-  const ratio = applied / total;
+export default function ProgressSection({ applicationsCount, total }) {
+  const ratio = applicationsCount / total;
 
   return (
     <div className="mt-4">
@@ -15,13 +15,13 @@ export default function ProgressSection({ applied, total }) {
       </div>
 
       <p className="mt-3 text-bordeaux text-center text-sm">
-        You&apos;ve applied to {applied} out of {total} jobs!
+        You&apos;ve applicationsCount to {applicationsCount} out of {total} jobs!
       </p>
     </div>
   );
 }
 
 ProgressSection.propTypes = {
-  applied: PropTypes.number.isRequired,
+  applicationsCount: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
 };

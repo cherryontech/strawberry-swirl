@@ -5,16 +5,16 @@ import babyPhenix from "../assets/baby_phoenix.png";
 import adultPhenix from "../assets/adult_phoenix.png";
 import { ValidationStrategy as PropTypes } from "@eslint/object-schema";
 
-export default function MotivationIcon({ applied }) {
+export default function MotivationIcon({ applicationsCount }) {
   let icon = feather;
 
-  if (applied >= 50) {
+  if (applicationsCount >= 50) {
     icon = adultPhenix;
-  } else if (applied >= 35) {
+  } else if (applicationsCount >= 35) {
     icon = babyPhenix;
-  } else if (applied >= 20) {
+  } else if (applicationsCount >= 20) {
     icon = egg;
-  } else if (applied >= 10) {
+  } else if (applicationsCount >= 10) {
     icon = ember;
   }
 
@@ -28,5 +28,5 @@ export default function MotivationIcon({ applied }) {
 }
 
 MotivationIcon.propTypes = {
-  applied: PropTypes.number.isRequired,
+  applicationsCount: PropTypes.number.isRequired,
 };

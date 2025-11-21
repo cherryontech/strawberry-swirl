@@ -5,7 +5,9 @@ import ProgressSection from "./ProgressSection.jsx";
 
 const MotivationBuddy = () => {
   const total = 50;
-  const applied = (JSON.parse(localStorage.getItem("applications")) || []).length;
+  const applicationsCount = (
+    JSON.parse(localStorage.getItem("applications")) || []
+  ).length;
 
   return (
     <div className="w-1/2 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md px-14 py-12">
@@ -13,9 +15,9 @@ const MotivationBuddy = () => {
         <h2 className="text-bordeaux font-medium text-2xl mb-8 text-center">
           Your Motivation Buddy
         </h2>
-        <MotivationIcon applied={applied} />
+        <MotivationIcon applicationsCount={applicationsCount} />
         <MotivationalQuotes />
-        <ProgressSection applied={applied} total={total} />
+        <ProgressSection applicationsCount={applicationsCount} total={total} />
       </div>
     </div>
   );
