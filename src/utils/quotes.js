@@ -1,4 +1,4 @@
-  // Cycle through quotes every 5 seconds with fade transition
+// Cycle through quotes every 5 seconds with fade transition
 
 export const QUOTES = [
   {
