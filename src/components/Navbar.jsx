@@ -11,7 +11,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            (isActive ? "text-deepOrange font-bold" : "text-bordeaux") +
+            (isActive ? "text-deepOrange border-b-2" : "text-bordeaux") +
             " text-h6"
           }
         >
@@ -21,7 +21,7 @@ const Navbar = () => {
         <NavLink
           to="/jobtracking"
           className={({ isActive }) =>
-            (isActive ? "text-deepOrange font-bold" : "text-bordeaux") +
+            (isActive ? "text-deepOrange border-b-2" : "text-bordeaux") +
             " text-h6"
           }
         >
@@ -31,7 +31,7 @@ const Navbar = () => {
         <NavLink
           to="/resources"
           className={({ isActive }) =>
-            (isActive ? "text-deepOrange font-bold" : "text-bordeaux") +
+            (isActive ? "text-deepOrange border-b-2" : "text-bordeaux") +
             " text-h6"
           }
         >

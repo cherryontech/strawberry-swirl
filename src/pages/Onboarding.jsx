@@ -19,12 +19,15 @@ const Onboarding = () => {
   };
 
   return (
-    <div className="bg-softPink w-full h-screen">
-      <div className="flex flex-col justify-center items-center h-screen">
-        <h1 className="font-lora text-4xl mb-6 lg:text-6xl">
-          What is your name?
-        </h1>
-        <div className="flex gap-2 w-full max-w-md">
+    <div className="bg-backgroundColor w-full min-h-screen flex flex-col">
+      <header className="flex items-center gap-2 p-4">
+        <img src="/logo.png" alt="logo" className="w-20 h-20" />
+        <h2 className="text-deepOrange">Motifly</h2>
+      </header>
+
+      <main className="flex flex-col justify-center items-center flex-1 text-center space-y-8">
+        <h1 className="text-bordeaux lg:text-6xl">What is your name?</h1>
+        <div className="flex gap-2 w-full max-w-md text-bordeaux justify-center">
           <input
             type="text"
             ref={userNameRef}
@@ -36,10 +39,10 @@ const Onboarding = () => {
             aria-label="Submit name"
             className="cursor-pointer"
           >
-            <GoArrowRight size={32} />
+            <GoArrowRight size={50} />
           </button>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
