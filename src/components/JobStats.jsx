@@ -28,7 +28,7 @@ const Statuses = () => {
   ).length;
 
   return (
-    <div className="flex flex-col gap-6 w-1/4">
+    <div className="flex flex-col gap-6">
       {/* Statuses */}
       <div className="rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
         <div className="font-inter text-2xl">
