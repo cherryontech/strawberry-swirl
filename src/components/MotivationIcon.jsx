@@ -21,7 +21,7 @@ export default function MotivationIcon({ applicationsCount }) {
   return (
     <div className="flex justify-center mb-6">
       <div className="w-52 h-52 rounded-full bg-backgroundColor flex items-center justify-center">
-        <img src={icon} alt="Motivation Buddy icon" className="w-42 h-42" />
+        <img src={icon} alt="Motivation Buddy icon" />
       </div>
     </div>
   );
