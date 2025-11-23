@@ -1,29 +1,35 @@
 import { useEffect, useState } from "react";
 import { QUOTES } from "../utils/quotes";
 
+const STORAGE_KEY = "motivational_quote_index";
+
 export default function MotivationalQuotes() {
-  const [currentIndex, setCurrentIndex] = useState(() =>
-    Math.floor(Math.random() * QUOTES.length),
-  );
-  const [fade, setFade] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(null);
+  const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => {
-          let newIndex;
-          do {
-            newIndex = Math.floor(Math.random() * QUOTES.length);
-          } while (newIndex === prevIndex); // ensure no immediate repeat
-          return newIndex;
-        });
-        setFade(true);
-      }, 500);
-    }, 5000);
+    const prevIndexString = sessionStorage.getItem(STORAGE_KEY);
+    const prevIndex = prevIndexString !== null ? Number(prevIndexString) : null;
 
-    return () => clearInterval(interval);
+    let newIndex;
+    // Prevent an infinite loop when QUOTES have only one item
+    if (QUOTES.length <= 1) {
+      newIndex = 0;
+    } else {
+      do {
+        newIndex = Math.floor(Math.random() * QUOTES.length);
+      } while (prevIndex !== null && newIndex === prevIndex);
+    }
+
+    setCurrentIndex(newIndex);
+    sessionStorage.setItem(STORAGE_KEY, String(newIndex));
+
+    setFade(true);
   }, []);
+
+  if (currentIndex === null) {
+    return null;
+  }
 
   const { q, a } = QUOTES[currentIndex];
 
