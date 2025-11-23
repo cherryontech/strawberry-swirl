@@ -7,6 +7,7 @@ import { IoIosArrowDropright } from "react-icons/io";
 const EditApplicationForm = ({ job, onSave, onClose }) => {
   const [companyName, setCompanyName] = useState(job.company);
   const [role, setRole] = useState(job.role);
+  const [jobType, setJobType] = useState(job.jobType);
   const [status, setStatus] = useState(job.status);
   const [date, setDate] = useState(job.dateApplied);
   const [notes, setNotes] = useState(job.notes);
@@ -27,6 +28,7 @@ const EditApplicationForm = ({ job, onSave, onClose }) => {
       id: job.id,
       companyName,
       role,
+      jobType,
       status: finalStatus,
       date: finalDate,
       notes,
@@ -56,7 +58,7 @@ const EditApplicationForm = ({ job, onSave, onClose }) => {
               placeholder="Company Name"
               value={companyName}
               onChange={(e) => setCompanyName(e.target.value)}
-              className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
+              className="col-span-2 font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
 
             <input
@@ -66,6 +68,20 @@ const EditApplicationForm = ({ job, onSave, onClose }) => {
               onChange={(e) => setRole(e.target.value)}
               className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
+
+            <select
+              name="jobType"
+              value={jobType}
+              onChange={(e) => setJobType(e.target.value)}
+              className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
+            >
+              <option value="">Job Type</option>
+              <option value="Full Time">Full Time</option>
+              <option value="Part Time">Part Time</option>
+              <option value="Contract">Contract</option>
+              <option value="Internship">Internship</option>
+              <option value="Temporary">Temporary</option>
+            </select>
 
             <input
               type="date"

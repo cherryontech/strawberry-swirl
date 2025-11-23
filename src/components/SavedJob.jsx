@@ -16,13 +16,15 @@ const SavedJob = ({ id, company, role, link, notes, onEdit, onDelete }) => {
   return (
     <div className="flex flex-col pt-4 pb-2 border-b border-backgroundColor">
       <div className="flex items-center w-full">
-        <p className="w-1/3 truncate text-richMahogany font-semibold">{company}</p>
+        <p className="w-1/3 truncate text-richMahogany font-semibold">
+          {company}
+        </p>
         <p className="w-1/3 truncate">{role}</p>
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-1/3 truncate"
+          className="w-1/3 truncate hover:text-gray-600"
         >
           {link}
         </a>

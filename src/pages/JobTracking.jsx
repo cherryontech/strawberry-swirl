@@ -173,12 +173,13 @@ const JobTracking = () => {
 
               <div className="w-full flex border-b border-deepOrange pb-2">
                 <h6 className="w-1/4 text-deepOrange font-semibold">Company</h6>
-                <h6 className="w-3/8 text-deepOrange font-semibold">Role</h6>
+                <h6 className="w-1/4 text-deepOrange font-semibold">Role</h6>
                 <h6 className="w-1/6 text-deepOrange font-semibold">
-                  Date Applied
+                  Job Type
                 </h6>
+                <h6 className="w-1/6 text-deepOrange font-semibold">Date</h6>
                 <h6 className="w-1/6 text-deepOrange font-semibold">Status</h6>
-                <div className="w-24" /> {/* placeholder for icon column */}
+                <div className="w-20" /> {/* placeholder for icons column */}
               </div>
 
               {[...jobApps]
@@ -199,6 +200,7 @@ const JobTracking = () => {
                     id={app.id}
                     company={app.companyName}
                     role={app.role}
+                    jobType={app.jobType}
                     dateApplied={app.date}
                     status={app.status}
                     notes={app.notes}

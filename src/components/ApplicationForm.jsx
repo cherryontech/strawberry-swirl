@@ -8,6 +8,7 @@ import { IoIosArrowDropright } from "react-icons/io";
 const ApplicationForm = ({ onSave, onClose }) => {
   const [companyName, setCompanyName] = useState("");
   const [role, setRole] = useState("");
+  const [jobType, setJobType] = useState("");
   const [status, setStatus] = useState("");
   const [date, setDate] = useState("");
   const [notes, setNotes] = useState("");
@@ -19,8 +20,8 @@ const ApplicationForm = ({ onSave, onClose }) => {
     if (!date) {
       const today = new Date();
       const localYear = today.getFullYear();
-      const localMonth = today.getMonth() + 1;
-      const localDay = today.getDate();
+      const localMonth = String(today.getMonth() + 1).padStart(2, "0");
+      const localDay = String(today.getDate()).padStart(2, "0");
       finalDate = `${localYear}-${localMonth}-${localDay}`;
     }
 
@@ -28,6 +29,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
       id: uuidv4(),
       companyName,
       role,
+      jobType,
       status: finalStatus,
       date: finalDate,
       notes,
@@ -37,6 +39,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
     // Reset fields
     setCompanyName("");
     setRole("");
+    setJobType("");
     setStatus("");
     setDate("");
     setNotes("");
@@ -64,7 +67,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
               placeholder="Company Name"
               value={companyName}
               onChange={(e) => setCompanyName(e.target.value)}
-              className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
+              className="col-span-2 font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
 
             <input
@@ -74,6 +77,20 @@ const ApplicationForm = ({ onSave, onClose }) => {
               onChange={(e) => setRole(e.target.value)}
               className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
+
+            <select
+              name="jobType"
+              value={jobType}
+              onChange={(e) => setJobType(e.target.value)}
+              className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
+            >
+              <option value="">Job Type</option>
+              <option value="Full Time">Full Time</option>
+              <option value="Part Time">Part Time</option>
+              <option value="Contract">Contract</option>
+              <option value="Internship">Internship</option>
+              <option value="Temporary">Temporary</option>
+            </select>
 
             <input
               type="date"
@@ -89,7 +106,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
               onChange={(e) => setStatus(e.target.value)}
               className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             >
-              <option value="">Select Status</option>
+              <option value="">Application Status</option>
               <option value="Applied">Applied</option>
               <option value="Interviewing">Interviewing</option>
               <option value="Rejected">Rejected</option>

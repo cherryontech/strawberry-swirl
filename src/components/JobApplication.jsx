@@ -10,6 +10,7 @@ const JobApplication = ({
   id,
   company,
   role,
+  jobType,
   dateApplied,
   status,
   notes,
@@ -25,11 +26,15 @@ const JobApplication = ({
   return (
     <div className="flex flex-col pt-4 pb-2 border-b border-backgroundColor">
       <div className="flex items-center w-full">
-        <p className="w-1/4 truncate text-richMahogany font-semibold">{company}</p>
-        <p className="w-3/8 truncate">{role}</p>
+        <p className="w-1/4 truncate text-richMahogany font-semibold">
+          {company}
+        </p>
+        <p className="w-1/4 truncate">{role}</p>
+        <p className="w-1/6 truncate">{jobType}</p>
         <p className="w-1/6 truncate">{dateApplied}</p>
         <p className="w-1/6 truncate">{status}</p>
-        <div className="flex items-center gap-2 w-24 justify-end">
+
+        <div className="flex items-center gap-2 w-20 justify-end">
           {notes && (
             <button onClick={handleShowNotes}>
               <FaRegStickyNote
@@ -41,7 +46,7 @@ const JobApplication = ({
           )}
           <button
             onClick={() =>
-              onEdit({ id, company, role, dateApplied, status, notes })
+              onEdit({ id, company, role, jobType, dateApplied, status, notes })
             }
           >
             <LuPencil
@@ -74,6 +79,7 @@ JobApplication.propTypes = {
   id: PropTypes.string.isRequired,
   company: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
+  jobType: PropTypes.string.isRequired,
   dateApplied: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
   notes: PropTypes.string.isRequired,
