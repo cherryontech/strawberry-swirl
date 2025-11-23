@@ -97,7 +97,7 @@ const EditApplicationForm = ({ job, onSave, onClose }) => {
               onChange={(e) => setStatus(e.target.value)}
               className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             >
-              <option value="">Select Status</option>
+              <option value="">Application Status</option>
               <option value="Applied">Applied</option>
               <option value="Interviewing">Interviewing</option>
               <option value="Rejected">Rejected</option>

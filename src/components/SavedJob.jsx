@@ -14,8 +14,8 @@ const SavedJob = ({ id, company, role, link, notes, onEdit, onDelete }) => {
   };
 
   return (
-    <div className="flex flex-col pt-4 pb-2 border-b border-backgroundColor">
-      <div className="flex items-center w-full">
+    <div className="flex flex-col">
+      <div className="flex items-center w-full border-b border-divderLines pt-4 pb-2">
         <p className="w-1/3 truncate text-richMahogany font-semibold">
           {company}
         </p>
@@ -59,9 +59,9 @@ const SavedJob = ({ id, company, role, link, notes, onEdit, onDelete }) => {
       </div>
 
       {showNotes && (
-        <div className="w-full pt-4">
+        <div className="w-full box-border overflow-hidden border-b border-divderLines bg-[#ffff] py-2">
           <p className="font-semibold text-deepOrange">Notes</p>
-          <p className="whitespace-pre-line wrap-break-word">{notes}</p>
+          <p className="whitespace-pre-line break-all">{notes}</p>
         </div>
       )}
     </div>
