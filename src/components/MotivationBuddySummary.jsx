@@ -28,7 +28,7 @@ export default function MotivationBuddySummary({ applicationsCount }) {
       <div className="rounded-3xl bg-white shadow-md px-12 py-6 flex flex-col items-center text-center">
         <img src={icon} alt="Motivation Buddy stage icon" className="h-12" />
         <p className="text-deepOrange text-lg font-medium mt-2">
-          You&apos;ve rizen!
+          You&apos;ve risen!
         </p>
         <p className="text-deepOrange text-lg font-medium mt-2 leading-[1.2]">
           You are unstoppable!
