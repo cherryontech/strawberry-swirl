@@ -63,7 +63,7 @@ const jobLinksData = {
     },
   ],
 
-  PM: [
+  "Project Management": [
     {
       jobPortalName: "LinkedIn Jobs",
       jobPortalLink: "https://www.linkedin.com/jobs/product-manager-jobs",
@@ -107,7 +107,7 @@ const jobLinksData = {
     { jobPortalName: "GitHub Jobs", jobPortalLink: "https://jobs.github.com/" },
   ],
 
-  FullStack: [
+  "Full Stack": [
     {
       jobPortalName: "LinkedIn Jobs",
       jobPortalLink: "https://www.linkedin.com/jobs/full-stack-developer-jobs",
@@ -127,7 +127,7 @@ const jobLinksData = {
     { jobPortalName: "Remote OK", jobPortalLink: "https://remoteok.com/" },
   ],
 
-  AI_ML: [
+  "AI/ML": [
     {
       jobPortalName: "LinkedIn Jobs",
       jobPortalLink: "https://www.linkedin.com/jobs/machine-learning-jobs",

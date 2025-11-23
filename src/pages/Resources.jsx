@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import Article from "../components/Article";
 import JobBoards from "../components/JobBoards";
@@ -14,18 +15,29 @@ const Resources = () => {
   };
 
   return (
-    <div className="bg-softPink min-h-screen px-12 py-8">
+    <div className="bg-backgroundColor min-h-screen px-12 py-8">
       <Navbar />
 
       <div className="flex flex-row items-center justify-center mt-5 ml-auto mr-auto gap-15">
-        <FilterButton headings={jobLinksData} onSelect={handleSelect} />
+        {Object.keys(jobLinksData).map((key) => (
+          <FilterButton
+            key={uuidv4()}
+            item={{
+              id: uuidv4(), // unique id for each filter button
+              heading: key,
+              links: jobLinksData[key],
+            }}
+            onSelect={handleSelect}
+            selected={selectedFilterButton}
+          />
+        ))}
       </div>
 
-      <div className="flex flex-row h-screen gap-10 mt-8 ml-20 mr-20">
-        <div className="flex flex-col items-center justify-start w-1/2 h-full bg-white rounded-4xl">
+      <div className="flex flex-row h-screen mt-8 ml-auto mr-auto bg-[#E2CAB9] min-h-screen w-full rounded-[25px]">
+        <div className="flex flex-col items-center  justify-start mt-10 ml-auto mb-10 -mr-auto  w-[40%] bg-white rounded-[25px] overflow-y-auto scroll-smooth scrollbar-hide">
           <JobBoards heading={selectedFilterButton} data={jobLinksData} />
         </div>
-        <div className="flex flex-col items-center justify-start w-1/2 h-full bg-white rounded-4xl overflow-y-auto scroll-smooth scrollbar-hide">
+        <div className="flex flex-col items-center justify-start mt-10 ml-auto mb-10 mr-auto w-[40%]  bg-white rounded-[25px] overflow-y-auto scroll-smooth scrollbar-hide">
           <Article heading={selectedFilterButton} data={jobArticlesData} />
         </div>
       </div>

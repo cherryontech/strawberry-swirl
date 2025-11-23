@@ -1,4 +1,5 @@
 import React from "react";
+import feather from "../assets/feather.png";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 
@@ -6,12 +7,19 @@ const Article = ({ heading, data }) => {
   if (!heading) {
     return (
       <>
-        <h1 className="font-lora font-medium text-[36px] leading-[1.28] tracking-[-0.04em] align-middle hanging-punctuation mt-8">
+        <h1 className="font-lora text-[#782E19] font-normal text-[33px] leading-[1.28] tracking-[-0.04em] align-middle hanging-punctuation mt-8">
           Related Articles
         </h1>
-        <p className="text-gray-600 mt-5 font-medium font-lora">
-          Please select a category above.
-        </p>
+        <div className="flex items-start justify-center align-middle m-5 h-[80%]">
+          <img
+            src={feather}
+            alt="Feather image"
+            className="w-[35px] h-[47px] opacity-100"
+          />
+          <p className="text-[#4E1303] text-[25px] ml-3 font-medium  font-lora">
+            Click a filter to find career field specific articles!
+          </p>
+        </div>
       </>
     );
   }
@@ -20,28 +28,25 @@ const Article = ({ heading, data }) => {
 
   return (
     <>
-      <h1 className="font-lora font-medium text-[36px] leading-[1.28] tracking-[-0.04em] align-middle hanging-punctuation mt-8">
-        Related Articles
+      <h1 className="font-lora text-[#782E19] font-normal text-[33px] leading-[1.28] tracking-[-0.04em] align-middle hanging-punctuation mt-8">
+        {heading} Related Articles
       </h1>
-      <div className="flex flex-row flex-wrap justify-center gap-2 mt-5 mb-5">
+      <div className="flex flex-row flex-wrap space-x-1 justify-center mt-5 mb-5 gap-8">
         {links.map((item) => (
           <div
             key={uuidv4()}
-            className="w-[260px] h-[296px] bg-white rounded-4xl shadow-md ml-auto mr-auto mb-5"
+            className="w-[220px] h-[296px] bg-[#4E1303] rounded-[25px] shadow-[2px_2px_8px_0px_#00000040] mb-5"
           >
-            <div className="w-[260px] h-[177px] bg-[#D9D9D9] rounded-t-4xl"></div>
+            <div className="w-[220px] h-[236px] bg-[#FBF9F3] rounded-t-[25px]"></div>
             <ul className="flex flex-wrap">
-              <li className="ml-4 mt-5 space-y-2">
-                <h3 className="text-lg  font-semibold font-lora text-gray-800 text-center block w-50 whitespace-normal break-words">
-                  {item.articleName}
-                </h3>
+              <li className="ml-auto mr-auto mt-3">
                 <a
                   href={item.articleLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-lora underline leading-[102%] tracking-[-0.04em] text-center mt-1 block w-60 whitespace-normal break-words "
+                  className="font-inter font-bold text-[15px] leading-[102%] tracking-[-0.04em] align-middle text-[#FBF9F3]"
                 >
-                  {item.articleLink}
+                  {item.articleName}
                 </a>
               </li>
             </ul>

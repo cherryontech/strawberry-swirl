@@ -50,7 +50,7 @@ const jobArticlesData = {
     },
   ],
 
-  PM: [
+  "Project Management": [
     {
       articleName: "Harvard Business Review",
       articleLink: "https://hbr.org/topic/product-management",
@@ -86,7 +86,7 @@ const jobArticlesData = {
     { articleName: "Hackernoon", articleLink: "https://hackernoon.com/" },
   ],
 
-  FullStack: [
+  "Full Stack": [
     { articleName: "Medium", articleLink: "https://dev.to/" },
     {
       articleName: "Stack Overflow Blog",
@@ -99,7 +99,7 @@ const jobArticlesData = {
     { articleName: "Hackernoon", articleLink: "https://hackernoon.com/" },
   ],
 
-  AI_ML: [
+  "AI/ML": [
     {
       articleName: "Towards Data Science (Medium)",
       articleLink: "https://towardsdatascience.com/",
