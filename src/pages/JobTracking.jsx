@@ -164,9 +164,9 @@ const JobTracking = () => {
 
                 <button
                   onClick={handleAddJobApp}
-                  className="bg-white shadow-md px-4 py-2 border-2 border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
+                  className="bg-white shadow px-4 py-2 border-[1.5px] border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
                 >
-                  <p>ADD</p>
+                  <p>Add</p>
                   <IoIosAddCircleOutline size={25} />
                 </button>
               </div>
@@ -210,7 +210,7 @@ const JobTracking = () => {
               {numJobApps < jobApps.length && (
                 <button
                   onClick={handleLoadMoreJobApps}
-                  className="mt-4 border border-deepOrange text-deepOrange px-4 py-2 rounded-3xl font-medium text-sm hover:scale-105 transition-transform duration-200 w-fit self-center cursor-pointer"
+                  className="mt-4 border-[1.5px] border-deepOrange text-deepOrange px-20 py-2 rounded-3xl shadow font-medium text-sm hover:scale-105 transition-transform duration-200 w-fit self-center cursor-pointer"
                 >
                   Load More
                 </button>
@@ -223,9 +223,9 @@ const JobTracking = () => {
                 <h4 className="text-bordeaux font-medium">Saved jobs</h4>
                 <button
                   onClick={handleAddSavedJob}
-                  className="bg-white shadow-md px-4 py-2 border-2 border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
+                  className="bg-white shadow px-4 py-2 border-[1.5px] border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
                 >
-                  <p>ADD</p>
+                  <p>Add</p>
                   <IoIosAddCircleOutline size={25} />
                 </button>
               </div>
@@ -256,7 +256,7 @@ const JobTracking = () => {
               {numSavedJobs < savedJobs.length && (
                 <button
                   onClick={handleLoadMoreSavedJobs}
-                  className="mt-4 border border-deepOrange text-deepOrange px-4 py-2 rounded-3xl font-medium text-sm hover:scale-105 transition-transform duration-200 w-fit self-center cursor-pointer"
+                  className="mt-4 border-[1.5px] border-deepOrange text-deepOrange px-20 py-2 rounded-3xl shadow font-medium text-sm hover:scale-105 transition-transform duration-200 w-fit self-center cursor-pointer"
                 >
                   Load More
                 </button>

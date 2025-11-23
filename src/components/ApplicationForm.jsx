@@ -64,7 +64,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
               placeholder="Company Name"
               value={companyName}
               onChange={(e) => setCompanyName(e.target.value)}
-              className="font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
+              className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
 
             <input
@@ -72,7 +72,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
               placeholder="Role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
+              className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
 
             <input
@@ -80,14 +80,14 @@ const ApplicationForm = ({ onSave, onClose }) => {
               name="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
+              className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             />
 
             <select
               name="status"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
+              className="font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange"
             >
               <option value="">Select Status</option>
               <option value="Applied">Applied</option>
@@ -102,12 +102,12 @@ const ApplicationForm = ({ onSave, onClose }) => {
               placeholder="Notes"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="col-span-2 font-inter px-4 py-2 border-2 border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange resize-none h-30"
+              className="col-span-2 font-inter px-4 py-2 border-[1.5px] border-bordeaux rounded-2xl bg-white text-bordeaux focus:outline-deepOrange resize-none h-30"
             ></textarea>
           </div>
 
           <button
-            className="mt-4 bg-white shadow-md px-4 py-2 border-2 border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
+            className="mt-4 bg-white shadow-md px-4 py-2 border-[1.5px] border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
             onClick={handleAddClick}
           >
             <div className="flex items-center gap-2">

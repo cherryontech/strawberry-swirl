@@ -25,7 +25,7 @@ const JobApplication = ({
   return (
     <div className="flex flex-col pt-4 pb-2 border-b border-backgroundColor">
       <div className="flex items-center w-full">
-        <p className="w-1/4 truncate">{company}</p>
+        <p className="w-1/4 truncate text-richMahogany font-semibold">{company}</p>
         <p className="w-3/8 truncate">{role}</p>
         <p className="w-1/6 truncate">{dateApplied}</p>
         <p className="w-1/6 truncate">{status}</p>
