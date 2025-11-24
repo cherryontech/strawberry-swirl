@@ -7,18 +7,20 @@ const Article = ({ heading, data }) => {
   if (!heading) {
     return (
       <>
-        <h1 className="font-lora text-[#782E19] font-normal text-[33px] leading-[1.28] tracking-[-0.04em] align-middle hanging-punctuation mt-8">
-          Related Articles
-        </h1>
-        <div className="flex items-start justify-center align-middle m-5 h-[80%]">
-          <img
-            src={feather}
-            alt="Feather image"
-            className="w-[35px] h-[47px] opacity-100"
-          />
-          <p className="text-[#4E1303] text-[25px] ml-3 font-medium  font-lora">
-            Click a filter to find career field specific articles!
-          </p>
+        <div className="flex flex-col items-center justify-center gap-5">
+          <h3 className="text-bordeaux leading-[1.28] tracking-[-0.04em] align-middle hanging-punctuation mt-8">
+            Related Articles
+          </h3>
+          <div className="flex items-start justify-start space-y-2 align-middle m-5 h-[80%] gap-5 px-10">
+            <img
+              src={feather}
+              alt="Feather image"
+              className="w-[35px] h-[47px] opacity-100"
+            />
+            <h5 className="text-[#4E1303] ml-auto mr-auto text-left">
+              Click a filter to find career field specific articles!
+            </h5>
+          </div>
         </div>
       </>
     );
@@ -28,9 +30,9 @@ const Article = ({ heading, data }) => {
 
   return (
     <>
-      <h1 className="font-lora text-[#782E19] font-normal text-[33px] leading-[1.28] tracking-[-0.04em] align-middle hanging-punctuation mt-8">
-        {heading} Related Articles
-      </h1>
+      <h3 className="text-bordeaux leading-[1.28] tracking-[-0.04em] align-middle hanging-punctuation mt-8">
+        {heading === "Project Management" ? "PM" : heading} Related Articles
+      </h3>
       <div className="flex flex-row flex-wrap space-x-1 justify-center mt-5 mb-5 gap-8">
         {links.map((item) => (
           <div
