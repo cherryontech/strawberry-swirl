@@ -1,11 +1,11 @@
 import JobApplication from "../components/JobApplication";
 import SavedJob from "../components/SavedJob";
 import Navbar from "../components/Navbar";
-import MotivationBuddy from "../components/MotivationBuddy";
+// import MotivationBuddy from "../components/MotivationBuddy";
 
 const Home = () => {
   return (
-    <div className="bg-backgroundColor min-h-screen px-12 py-8">
+    <div className="bg-backgroundColor min-h-screen px-30 py-8">
       <Navbar />
 
       <main className="flex flex-row gap-8 items-start">
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
 
         {/* Motivation Buddy Component */}
-        <MotivationBuddy />
+        {/* <MotivationBuddy /> */}
       </main>
     </div>
   );

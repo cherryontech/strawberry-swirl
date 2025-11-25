@@ -14,7 +14,7 @@ const Resources = () => {
   };
 
   return (
-    <div className="bg-softPink min-h-screen px-12 py-8">
+    <div className="bg-backgroundColor min-h-screen px-30 py-8">
       <Navbar />
 
       <div className="flex flex-row items-center justify-center mt-5 ml-auto mr-auto gap-15">
