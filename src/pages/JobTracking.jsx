@@ -268,7 +268,7 @@ const JobTracking = () => {
           </div>
         )}
 
-        <div className="w-1/4 flex flex-col gap-6">
+        <div className="w-1/5 flex flex-col gap-6">
           <MotivationBuddySummary applicationsCount={jobApps.length} />
           {/* Job Statistic Component */}
           <JobStats />
