@@ -1,26 +1,19 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 import PropTypes from "prop-types";
 
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 
-const SavedJobForm = ({ onSave, onClose }) => {
-  const [companyName, setCompanyName] = useState("");
-  const [role, setRole] = useState("");
-  const [link, setLink] = useState("");
-  const [notes, setNotes] = useState("");
+const EditSavedJobForm = ({ job, onSave, onClose }) => {
+  const [companyName, setCompanyName] = useState(job.company);
+  const [role, setRole] = useState(job.role);
+  const [link, setLink] = useState(job.link);
+  const [notes, setNotes] = useState(job.notes);
 
-  const handleAddClick = () => {
-    const newSavedJob = { id: uuidv4(), companyName, role, link, notes };
+  const handleSaveClick = () => {
+    const newSavedJob = { id: job.id, companyName, role, link, notes };
     onSave(newSavedJob);
-
-    // Reset fields
-    setCompanyName("");
-    setRole("");
-    setLink("");
-    setNotes("");
   };
 
   return (
@@ -76,7 +69,7 @@ const SavedJobForm = ({ onSave, onClose }) => {
 
           <button
             className="mt-4 bg-white shadow-md px-4 py-2 border-[1.5px] border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
-            onClick={handleAddClick}
+            onClick={handleSaveClick}
           >
             <div className="flex items-center gap-2">
               <p>Save</p>
@@ -89,9 +82,10 @@ const SavedJobForm = ({ onSave, onClose }) => {
   );
 };
 
-SavedJobForm.propTypes = {
+EditSavedJobForm.propTypes = {
+  job: PropTypes.object.isRequired,
   onSave: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 };
 
-export default SavedJobForm;
+export default EditSavedJobForm;

@@ -19,40 +19,49 @@ const Statuses = () => {
     return amt;
   }
 
-  const totalNumOfApps = (
-    JSON.parse(localStorage.getItem("applications")) || []
-  ).length;
-
   const totalNumOfSavedJobs = (
     JSON.parse(localStorage.getItem("savedJobs")) || []
   ).length;
 
+  const totalNumOfApps =
+    (JSON.parse(localStorage.getItem("applications")) || []).length +
+    totalNumOfSavedJobs;
+
   return (
-    <div className="flex flex-col gap-6 w-1/4">
-      {/* Statuses */}
-      <div className="rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
-        <div className="font-inter text-2xl">
-          {String(totalNumOfSavedJobs).padStart(2, "0")} Saved
+    <div className="w-1/5 rounded-3xl bg-white shadow-md px-8 py-10">
+      <div className="flex flex-col gap-4 pb-2">
+        <div className="w-full flex">
+          <h6 className="w-1/3 text-bordeaux">{totalNumOfSavedJobs}</h6>
+          <h6 className="w-2/3 text-bordeaux">Saved</h6>
         </div>
-        <div className="font-inter text-2xl">
-          {String(getStatusAmt("Applied")).padStart(2, "0")} Applied
+
+        <div className="w-full flex">
+          <h6 className="w-1/3 text-bordeaux">{getStatusAmt("Applied")}</h6>
+          <h6 className="w-2/3 text-bordeaux">Applied</h6>
         </div>
-        <div className="font-inter text-2xl">
-          {String(getStatusAmt("Interviewing")).padStart(2, "0")} Interviewing
+
+        <div className="w-full flex">
+          <h6 className="w-1/3 text-bordeaux">
+            {getStatusAmt("Interviewing")}
+          </h6>
+          <h6 className="w-2/3 text-bordeaux">Interviewing</h6>
         </div>
-        <div className="font-inter text-2xl">
-          {String(getStatusAmt("Rejected")).padStart(2, "0")} Rejected
+
+        <div className="w-full flex">
+          <h6 className="w-1/3 text-bordeaux">{getStatusAmt("Rejected")}</h6>
+          <h6 className="w-2/3 text-bordeaux">Rejected</h6>
         </div>
-        <div className="font-inter text-2xl">
-          {String(getStatusAmt("Offers")).padStart(2, "0")} Offers
+
+        <div className="w-full flex">
+          <h6 className="w-1/3 text-bordeaux">{getStatusAmt("Offers")}</h6>
+          <h6 className="w-2/3 text-bordeaux">Offers</h6>
         </div>
       </div>
-
-      {/* Total number of applied jobs */}
-      <div className="rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
-        <p className="font-inter text-2xl">
-          {String(totalNumOfApps).padStart(2, "0")} Total No.
-        </p>
+      <div className="w-full flex border-t border-deepOrange pt-2">
+        <h6 className="w-1/3 text-deepOrange font-semibold">
+          {totalNumOfApps}
+        </h6>
+        <h6 className="w-2/3 text-deepOrange font-semibold">Total No.</h6>
       </div>
     </div>
   );

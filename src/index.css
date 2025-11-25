@@ -16,6 +16,8 @@
   --color-white: #fbf9f3;
   --color-bordeaux: #782e19;
   --color-darkBeige: #e7e4d8;
+  --color-richMahogany: #4e1303;
+  --color-divderLines: #ddccc1;
 
   /* Type scale */
   --text-h1: 47px;
@@ -38,12 +40,6 @@
 
   --text-p: 16px;
   --text-p--line-height: 1.5;
-
-  --text-sm: 13px;
-  --text-sm--line-height: 1.6;
-
-  --text-xs: 11px;
-  --text-xs--line-height: 1.6;
 }
 
 @layer base {
