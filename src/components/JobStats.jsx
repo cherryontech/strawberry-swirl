@@ -28,7 +28,7 @@ const Statuses = () => {
     totalNumOfSavedJobs;
 
   return (
-    <div className="w-1/5 rounded-3xl bg-white shadow-md px-8 py-10">
+    <div className="rounded-3xl bg-white shadow-md px-8 py-10">
       <div className="flex flex-col gap-4 pb-2">
         <div className="w-full flex">
           <h6 className="w-1/3 text-bordeaux">{totalNumOfSavedJobs}</h6>

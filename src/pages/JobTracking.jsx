@@ -12,6 +12,7 @@ import EditApplicationForm from "../components/EditApplicationForm";
 import EditSavedJobForm from "../components/EditSavedJobForm";
 
 import { IoIosAddCircleOutline } from "react-icons/io";
+import MotivationBuddySummary from "../components/MotivationBuddySummary.jsx";
 
 const JobTracking = () => {
   const [jobApps, setJobApps] = useState([]);
@@ -267,8 +268,11 @@ const JobTracking = () => {
           </div>
         )}
 
-        {/* Job Statistic Component */}
-        <JobStats />
+        <div className="w-1/5 flex flex-col gap-6">
+          <MotivationBuddySummary applicationsCount={jobApps.length} />
+          {/* Job Statistic Component */}
+          <JobStats />
+        </div>
       </main>
     </div>
   );
