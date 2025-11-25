@@ -1,7 +1,7 @@
 import JobApplication from "../components/JobApplication";
 import SavedJob from "../components/SavedJob";
 import Navbar from "../components/Navbar";
-// import MotivationBuddy from "../components/MotivationBuddy";
+import MotivationBuddy from "../components/MotivationBuddy";
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
 
       <main className="flex flex-row gap-8 items-start">
         {/* Jobs Dashboard */}
-        <div className="w-1/2 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
+        <div className="w-3/5 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
           {/* Recent Applications Section */}
           <div className="flex flex-col">
             <h2 className="font-lora font-medium text-2xl mb-8">
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
 
         {/* Motivation Buddy Component */}
-        {/* <MotivationBuddy /> */}
+         <MotivationBuddy />
       </main>
     </div>
   );
