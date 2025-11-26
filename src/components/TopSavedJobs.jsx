@@ -22,7 +22,7 @@ const TopSavedJobs = () => {
   return (
     <div className="flex flex-col">
       <div className="flex item-start justify-start">
-        <h4 className="text-bordeaux mb-8">Saved Jobs</h4>
+        <h4 className="text-bordeaux font-medium mb-8">Saved Jobs</h4>
         <IoIosArrowForward
           onClick={handleNavigateSaved}
           size={25}
@@ -30,23 +30,23 @@ const TopSavedJobs = () => {
         />
       </div>
 
-      <div className="w-full flex border-b border-deepOrange font-semibold pb-2 mb-4">
+      <div className="w-full flex border-b border-deepOrange font-semibold pb-2">
         <h5 className="w-1/3 text-deepOrange font-semibold">Company</h5>
         <h5 className="w-1/3 text-deepOrange font-semibold">Role</h5>
-        <h5 className="w-1/3 text-deepOrange font-semibold">Link</h5>
+        <h5 className="w-1/3 text-deepOrange font-semibold">Job Link</h5>
       </div>
       {topFourSavedJobs.map((job) => (
         <div
           key={job.id}
           className="w-full flex gap-2 border-b border-gray-300 py-2"
         >
-          <p className="w-1/3 truncate">{job.companyName}</p>
+          <p className="w-1/3 truncate  text-richMahogany font-semibold">{job.companyName}</p>
           <p className="w-1/3 truncate">{job.role}</p>
           <a
             href={job.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-1/3 truncate text-blue-600"
+            className="w-1/3 truncate hover:text-gray-600"
           >
             {job.link}
           </a>

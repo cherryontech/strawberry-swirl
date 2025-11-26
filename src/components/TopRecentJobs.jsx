@@ -29,7 +29,7 @@ const TopRecentJobs = () => {
     <>
       <div className="flex flex-col">
         <div className="flex item-start justify-start">
-          <h4 className="text-bordeaux mb-8">Recently Applied</h4>
+          <h4 className="text-bordeaux font-medium mb-8">Recently Applied</h4>
           <IoIosArrowForward
             onClick={handleNavigateRecent}
             size={25}
@@ -37,7 +37,7 @@ const TopRecentJobs = () => {
           />
         </div>
 
-        <div className="w-full flex border-b border-deepOrange pb-2 mb-4">
+        <div className="w-full flex border-b border-deepOrange pb-2">
           <h5 className="w-1/4 text-deepOrange font-semibold">Company</h5>
           <h5 className="w-1/4 text-deepOrange font-semibold">Role</h5>
           <h5 className="w-1/4 text-deepOrange font-semibold">Date Applied</h5>
