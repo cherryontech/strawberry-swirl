@@ -5,12 +5,12 @@ import MotivationBuddy from "../components/MotivationBuddy";
 
 const Home = () => {
   return (
-    <div className="bg-backgroundColor min-h-screen px-12 py-8">
+    <div className="bg-backgroundColor min-h-screen px-30 py-8">
       <Navbar />
 
       <main className="flex flex-row gap-8 items-start">
         {/* Jobs Dashboard */}
-        <div className="w-1/2 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
+        <div className="w-3/5 rounded-3xl bg-linear-to-r from-gray-50 to-white shadow-md p-8">
           {/* Recent Applications Section */}
           <div className="flex flex-col">
             <h2 className="font-lora font-medium text-2xl mb-8">
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
 
         {/* Motivation Buddy Component */}
-        <MotivationBuddy />
+         <MotivationBuddy />
       </main>
     </div>
   );
