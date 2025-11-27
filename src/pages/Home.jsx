@@ -50,7 +50,7 @@ const Home = () => {
         </div>
 
         {/* Motivation Buddy Component */}
-         <MotivationBuddy />
+        <MotivationBuddy />
       </main>
     </div>
   );

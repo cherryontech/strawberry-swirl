@@ -178,7 +178,9 @@ const JobTracking = () => {
                 <h6 className="w-1/6 text-deepOrange font-semibold">
                   Job Type
                 </h6>
-                <h6 className="w-1/6 text-deepOrange font-semibold">Date Applied</h6>
+                <h6 className="w-1/6 text-deepOrange font-semibold">
+                  Date Applied
+                </h6>
                 <h6 className="w-1/6 text-deepOrange font-semibold">Status</h6>
                 <div className="w-20" /> {/* placeholder for icons column */}
               </div>
@@ -236,7 +238,9 @@ const JobTracking = () => {
               <div className="w-full flex border-b border-deepOrange pb-2">
                 <h6 className="w-1/3 text-deepOrange font-semibold">Company</h6>
                 <h6 className="w-1/3 text-deepOrange font-semibold">Role</h6>
-                <h6 className="w-1/3 text-deepOrange font-semibold">Job Link</h6>
+                <h6 className="w-1/3 text-deepOrange font-semibold">
+                  Job Link
+                </h6>
                 <div className="w-24" /> {/* placeholder for icon column */}
               </div>
 
