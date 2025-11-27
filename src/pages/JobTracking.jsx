@@ -127,6 +127,10 @@ const JobTracking = () => {
     setNumSavedJobs((prev) => prev + 4);
   };
 
+  const totalNumOfApps = (
+    JSON.parse(localStorage.getItem("applications")) || []
+  ).length;
+
   return (
     <div className="bg-backgroundColor min-h-screen px-30 py-8">
       <Navbar />
@@ -211,6 +215,15 @@ const JobTracking = () => {
                     onDelete={handleDeleteJobApp}
                   />
                 ))}
+
+              <div className="flex items-end gap-2 mt-2">
+                <p className="text-[15px] text-richMahogany font-medium">
+                  COUNT
+                </p>
+                <h6 className="text-richMahogany font-medium">
+                  {totalNumOfApps}
+                </h6>
+              </div>
 
               {numJobApps < jobApps.length && (
                 <button
