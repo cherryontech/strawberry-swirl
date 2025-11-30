@@ -31,9 +31,9 @@ const TopSavedJobs = () => {
       </div>
 
       <div className="w-full flex border-b border-deepOrange font-semibold pb-2">
-        <h5 className="w-1/3 text-deepOrange font-semibold">Company</h5>
-        <h5 className="w-1/3 text-deepOrange font-semibold">Role</h5>
-        <h5 className="w-1/3 text-deepOrange font-semibold">Job Link</h5>
+        <h6 className="w-1/3 text-deepOrange font-semibold">Company</h6>
+        <h6 className="w-1/3 text-deepOrange font-semibold">Role</h6>
+        <h6 className="w-1/3 text-deepOrange font-semibold">Job Link</h6>
       </div>
       {topFourSavedJobs.map((job) => (
         <div

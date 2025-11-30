@@ -38,10 +38,10 @@ const TopRecentJobs = () => {
         </div>
 
         <div className="w-full flex border-b border-deepOrange pb-2">
-          <h5 className="w-1/4 text-deepOrange font-semibold">Company</h5>
-          <h5 className="w-1/4 text-deepOrange font-semibold">Role</h5>
-          <h5 className="w-1/4 text-deepOrange font-semibold">Date Applied</h5>
-          <h5 className="w-1/4 text-deepOrange font-semibold">Status</h5>
+          <h6 className="w-1/4 text-deepOrange font-semibold">Company</h6>
+          <h6 className="w-1/4 text-deepOrange font-semibold">Role</h6>
+          <h6 className="w-1/4 text-deepOrange font-semibold">Date Applied</h6>
+          <h6 className="w-1/4 text-deepOrange font-semibold">Status</h6>
         </div>
       </div>
       {recentSavedJobs.map((job, index) => (
