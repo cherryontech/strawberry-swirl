@@ -40,11 +40,10 @@ const Article = ({ heading, data }) => {
             key={uuidv4()}
             className="w-[220px] h-[280px] rounded-[25px] shadow-[2px_2px_8px_0px_#00000040] overflow-hidden bg-white"
           >
-            {/* Top image */}
-
+           
             <img
-              // src={item.image}
-              src={item.articleImage} // placeholder image (replace)
+              
+              src={item.articleImage} 
               alt={item.articleName}
               className="w-full h-[168px] object-cover"
             />
