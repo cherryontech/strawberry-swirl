@@ -11,7 +11,7 @@ const Home = () => {
       <main className="flex flex-row gap-8 items-start">
         {/* Jobs Dashboard */}
 
-        <div className="w-3/5 rounded-[25px] bg-[#FBF9F3] shadow-md p-8">
+        <div className="w-3/5 rounded-[25px] bg-[#FBF9F3] shadow-md p-10">
           {/* Recent Applications Section */}
           <div className="flex flex-col">
             <TopRecentJobs />
