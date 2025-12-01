@@ -8,14 +8,19 @@ const jobLinksData = {
       jobPortalName: "Indeed",
       jobPortalLink: "https://www.indeed.com/q-Fintech-jobs.html",
     },
-    {
-      jobPortalName: "Wellfound (ex-AngelList)",
-      jobPortalLink: "https://wellfound.com/ ",
-    },
+
     { jobPortalName: "Otta", jobPortalLink: "https://otta.com/" },
     {
       jobPortalName: "eFinancialCareers",
-      jobPortalLink: ": https://www.efinancialcareers.com/",
+      jobPortalLink: "https://www.efinancialcareers.com/",
+    },
+    {
+      jobPortalName: "Lensa",
+      jobPortalLink: "https://lensa.com/",
+    },
+    {
+      jobPortalName: "Simplify",
+      jobPortalLink: "https://simplify.jobs/",
     },
   ],
 
@@ -30,11 +35,19 @@ const jobLinksData = {
     },
     {
       jobPortalName: "The Muse",
-      jobPortalLink: ": https://www.themuse.com/jobs?q=marketing",
+      jobPortalLink: "https://www.themuse.com/jobs?q=marketing",
     },
     {
-      jobPortalName: "Wellfound (ex-AngelList)",
+      jobPortalName: "Wellfound",
       jobPortalLink: "https://wellfound.com/",
+    },
+    {
+      jobPortalName: "Lensa",
+      jobPortalLink: "https://lensa.com/",
+    },
+    {
+      jobPortalName: "Simplify",
+      jobPortalLink: "https://simplify.jobs/",
     },
     {
       jobPortalName: "Glassdoor",
@@ -52,11 +65,20 @@ const jobLinksData = {
       jobPortalName: "Indeed",
       jobPortalLink: "https://www.indeed.com/q-Sales-jobs.html",
     },
+    { jobPortalName: "Otta", jobPortalLink: "https://otta.com/" },
     {
       jobPortalName: "Glassdoor",
       jobPortalLink: "https://www.glassdoor.com/Job/sales-jobs-SRCH_KO0,5.htm",
     },
-    { jobPortalName: "Otta", jobPortalLink: ": https://otta.com/" },
+    {
+      jobPortalName: "Lensa",
+      jobPortalLink: "https://lensa.com/",
+    },
+    {
+      jobPortalName: "Simplify",
+      jobPortalLink: "https://simplify.jobs/",
+    },
+
     {
       jobPortalName: "HubSpot Careers",
       jobPortalLink: "https://www.hubspot.com/careers",
@@ -73,23 +95,35 @@ const jobLinksData = {
       jobPortalLink: "https://www.indeed.com/q-Product-Manager-jobs.htm",
     },
     {
-      jobPortalName: "Mind the Product Jobs",
-      jobPortalLink: "https://jobs.mindtheproduct.com/",
+      jobPortalName: "Wellfound",
+      jobPortalLink: "https://wellfound.com/",
     },
     {
-      jobPortalName: "Wellfound (ex-AngelList)",
-      jobPortalLink: "https://wellfound.com/",
+      jobPortalName: "Otta",
+      jobPortalLink: "https://us.welcometothejungle.com/",
     },
     {
       jobPortalName: "Glassdoor",
       jobPortalLink:
         "https://www.glassdoor.com/Job/product-manager-jobs-SRCH_KO0,15.htm",
     },
+    {
+      jobPortalName: "Mind the Product",
+      jobPortalLink: "https://jobs.mindtheproduct.com/",
+    },
+    {
+      jobPortalName: "Lensa",
+      jobPortalLink: "https://lensa.com/",
+    },
+    {
+      jobPortalName: "Simplify",
+      jobPortalLink: "https://simplify.jobs/",
+    },
   ],
 
   SWE: [
     {
-      jobPortalName: "LinkedIn Jobs",
+      jobPortalName: "LinkedIn",
       jobPortalLink: "https://www.linkedin.com/jobs/software-engineer-jobs",
     },
     {
@@ -97,14 +131,22 @@ const jobLinksData = {
       jobPortalLink: "https://www.indeed.com/q-Software-Engineer-jobs.html",
     },
     {
-      jobPortalName: "Stack Overflow Jobs",
-      jobPortalLink: "https://stackoverflow.com/jobs",
-    },
-    {
-      jobPortalName: "Wellfound (ex-AngelList)",
+      jobPortalName: "Wellfound",
       jobPortalLink: "https://wellfound.com/",
     },
-    { jobPortalName: "GitHub Jobs", jobPortalLink: "https://jobs.github.com/" },
+    {
+      jobPortalName: "Stack Overflow",
+      jobPortalLink: "https://stackoverflowjobs.com/",
+    },
+    { jobPortalName: "GitHub", jobPortalLink: "https://jobs.github.com/" },
+    {
+      jobPortalName: "Lensa",
+      jobPortalLink: "https://lensa.com/",
+    },
+    {
+      jobPortalName: "Simplify",
+      jobPortalLink: "https://simplify.jobs/",
+    },
   ],
 
   "Full Stack": [
@@ -117,19 +159,21 @@ const jobLinksData = {
       jobPortalLink: "https://www.indeed.com/q-Full-Stack-Developer-jobs.html",
     },
     {
-      jobPortalName: "Stack Overflow Jobs",
+      jobPortalName: "Stack Overflow",
       jobPortalLink: "https://stackoverflow.com/jobs",
     },
     {
-      jobPortalName: "Wellfound (ex-AngelList)",
+      jobPortalName: "Wellfound",
       jobPortalLink: "https://wellfound.com/",
     },
     { jobPortalName: "Remote OK", jobPortalLink: "https://remoteok.com/" },
+    { jobPortalName: "Lensa", jobPortalLink: "https://lensa.com/" },
+    { jobPortalName: "Simplify", jobPortalLink: "https://simplify.jobs/" },
   ],
 
   "AI/ML": [
     {
-      jobPortalName: "LinkedIn Jobs",
+      jobPortalName: "LinkedIn",
       jobPortalLink: "https://www.linkedin.com/jobs/machine-learning-jobs",
     },
     {
@@ -141,13 +185,20 @@ const jobLinksData = {
       jobPortalLink: "https://www.kaggle.com/jobs",
     },
     {
-      jobPortalName: "Wellfound (ex-AngelList)",
+      jobPortalName: "Wellfound",
       jobPortalLink: "https://wellfound.com/",
     },
     {
-      jobPortalName: "Glassdoor",
-      jobPortalLink:
-        "https://www.glassdoor.com/Job/machine-learning-jobs-SRCH_KO0,16.htm",
+      jobPortalName: "Stack Overflow",
+      jobPortalLink: "https://stackoverflowjobs.com/?co=US&jk=5c3878622bbbe9fd",
+    },
+    {
+      jobPortalName: "Lensa",
+      jobPortalLink: "https://lensa.com/",
+    },
+    {
+      jobPortalName: "Simplify",
+      jobPortalLink: "https://simplify.jobs/",
     },
   ],
 };

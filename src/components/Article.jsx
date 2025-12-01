@@ -33,25 +33,36 @@ const Article = ({ heading, data }) => {
       <h3 className="text-bordeaux leading-[1.28] tracking-[-0.04em] align-middle hanging-punctuation mt-8">
         {heading === "Project Management" ? "PM" : heading} Related Articles
       </h3>
-      <div className="flex flex-row flex-wrap space-x-1 justify-center mt-5 mb-5 gap-8">
+
+      <div className="flex flex-row flex-wrap justify-center mt-5 mb-5 gap-8">
         {links.map((item) => (
           <div
             key={uuidv4()}
-            className="w-[220px] h-[296px] bg-[#4E1303] rounded-[25px] shadow-[2px_2px_8px_0px_#00000040] mb-5"
+            className="w-[220px] h-[280px] rounded-[25px] shadow-[2px_2px_8px_0px_#00000040] overflow-hidden bg-white"
           >
-            <div className="w-[220px] h-[236px] bg-[#FBF9F3] rounded-t-[25px]"></div>
-            <ul className="flex flex-wrap">
-              <li className="ml-auto mr-auto mt-3">
-                <a
-                  href={item.articleLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-inter font-bold text-[15px] leading-[102%] tracking-[-0.04em] align-middle text-[#FBF9F3]"
-                >
-                  {item.articleName}
-                </a>
-              </li>
-            </ul>
+           
+            <img
+              
+              src={item.articleImage} 
+              alt={item.articleName}
+              className="w-full h-[168px] object-cover"
+            />
+
+            {/* Bottom section */}
+            <div className="bg-[#4E1303] w-full h-28 p-3 flex flex-col justify-center">
+              <p className="font-inter text-[13px] text-[#FBF9F3] mb-2">
+                {item.articleAuthor}
+              </p>
+
+              <a
+                href={item.articleLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-inter font-bold text-[15px] leading-tight tracking-[-0.04em] text-[#FBF9F3] underline"
+              >
+                {item.articleName}
+              </a>
+            </div>
           </div>
         ))}
       </div>
