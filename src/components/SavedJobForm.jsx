@@ -13,7 +13,7 @@ const SavedJobForm = ({ onSave, onClose }) => {
   const [notes, setNotes] = useState("");
 
   const handleAddClick = () => {
-    if (!companyName || !role || !link) {
+    if (!companyName.trim() || !role.trim() || !link.trim()) {
       alert("Please fill out Company, Role, and Link.");
       return;
     }
