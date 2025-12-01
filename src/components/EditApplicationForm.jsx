@@ -24,6 +24,11 @@ const EditApplicationForm = ({ job, onSave, onClose }) => {
       finalDate = `${localYear}-${localMonth}-${localDay}`;
     }
 
+    if (!companyName.trim() || !role.trim() || !jobType) {
+      alert("Please fill out Company, Role, and Job Type.");
+      return;
+    }
+
     const newApp = {
       id: job.id,
       companyName,
