@@ -13,6 +13,11 @@ const SavedJobForm = ({ onSave, onClose }) => {
   const [notes, setNotes] = useState("");
 
   const handleAddClick = () => {
+    if (!companyName || !role || !link) {
+      alert("Please fill out Company, Role, and Link.");
+      return;
+    }
+
     const newSavedJob = { id: uuidv4(), companyName, role, link, notes };
     onSave(newSavedJob);
 

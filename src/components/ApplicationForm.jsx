@@ -25,6 +25,11 @@ const ApplicationForm = ({ onSave, onClose }) => {
       finalDate = `${localYear}-${localMonth}-${localDay}`;
     }
 
+    if (!companyName || !role || !jobType) {
+      alert("Please fill out Company, Role, and Job Type.");
+      return;
+    }
+
     const newApp = {
       id: uuidv4(),
       companyName,
