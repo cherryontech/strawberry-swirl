@@ -1,27 +1,26 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import PropTypes from "prop-types";
 
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 
-const ApplicationForm = ({ onSave, onClose }) => {
-  const [companyName, setCompanyName] = useState("");
-  const [role, setRole] = useState("");
-  const [jobType, setJobType] = useState("");
-  const [status, setStatus] = useState("");
-  const [date, setDate] = useState("");
-  const [notes, setNotes] = useState("");
+const EditApplicationForm = ({ job, onSave, onClose }) => {
+  const [companyName, setCompanyName] = useState(job.company);
+  const [role, setRole] = useState(job.role);
+  const [jobType, setJobType] = useState(job.jobType);
+  const [status, setStatus] = useState(job.status);
+  const [date, setDate] = useState(job.dateApplied);
+  const [notes, setNotes] = useState(job.notes);
 
-  const handleAddClick = () => {
+  const handleSaveClick = () => {
     const finalStatus = status || "Applied";
     let finalDate = date;
 
     if (!date) {
       const today = new Date();
       const localYear = today.getFullYear();
-      const localMonth = String(today.getMonth() + 1).padStart(2, "0");
-      const localDay = String(today.getDate()).padStart(2, "0");
+      const localMonth = today.getMonth() + 1;
+      const localDay = today.getDate();
       finalDate = `${localYear}-${localMonth}-${localDay}`;
     }
 
@@ -31,7 +30,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
     }
 
     const newApp = {
-      id: uuidv4(),
+      id: job.id,
       companyName,
       role,
       jobType,
@@ -40,21 +39,13 @@ const ApplicationForm = ({ onSave, onClose }) => {
       notes,
     };
     onSave(newApp);
-
-    // Reset fields
-    setCompanyName("");
-    setRole("");
-    setJobType("");
-    setStatus("");
-    setDate("");
-    setNotes("");
   };
 
   return (
     <div className="w-4/5 rounded-3xl bg-white shadow-md p-10">
       <div className="flex flex-col">
         <div className="flex justify-between items-center mb-8">
-          <h4 className="text-bordeaux font-medium">Add new application</h4>
+          <h4 className="text-bordeaux font-medium">Edit job application</h4>
 
           <button
             onClick={onClose}
@@ -130,7 +121,7 @@ const ApplicationForm = ({ onSave, onClose }) => {
 
           <button
             className="mt-4 bg-white shadow-md px-4 py-2 border-[1.5px] border-deepOrange rounded-3xl text-deepOrange font-inter font-medium flex justify-center items-center gap-2 text-sm cursor-pointer hover:scale-105 transition-transform duration-200"
-            onClick={handleAddClick}
+            onClick={handleSaveClick}
           >
             <div className="flex items-center gap-2">
               <p>Save</p>
@@ -143,9 +134,10 @@ const ApplicationForm = ({ onSave, onClose }) => {
   );
 };
 
-ApplicationForm.propTypes = {
+EditApplicationForm.propTypes = {
+  job: PropTypes.object.isRequired,
   onSave: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 };
 
-export default ApplicationForm;
+export default EditApplicationForm;

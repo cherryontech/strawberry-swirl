@@ -1,11 +1,11 @@
-import ApplicationForm from "./components/ApplicationForm";
+import { Outlet } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <ApplicationForm />
+      <Outlet />
     </div>
   );
-}
+};
 
 export default App;
